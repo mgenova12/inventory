@@ -1,2 +1,30 @@
-<h1>Inventories#show</h1>
-<p>Find me in app/views/inventories/show.html.erb</p>
+<h1>Order</h1>
+
+<div class="table-responsive">          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Current Quantity</th>
+        <th>Quantity Needed</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+	  <tr>
+
+
+	<% @inventories.each do |inventory| %>
+	    <td><%= inventory.product.name %></td>
+	    <td><%= inventory.amount %></td>	
+	    <td>amount-max</td>
+	 </tr>
+
+	 <% end %>
+
+    </tbody>
+  </table>
+
+  </div>
+</div>
