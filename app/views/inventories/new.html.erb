@@ -1,5 +1,6 @@
 <h1>Prep Center Order List</h1>
 
+
 <div class="table-responsive">          
   <table class="table table-striped">
     <thead>
@@ -11,18 +12,32 @@
     </thead>
     <tbody>
 
-	<% @products.each do |product| %>
-    <%= form_for :inventory do |f| %>
-	      <tr>
-	        <td><%= product.name %></td>
-	        <td><%= product.measurement %></td>
-	        <td><%= f.number_field :amount, class: 'form-control' %></td>
-	        <%= f.hidden_field :product_id, :value => product.id %>
-	      </tr>
-	     <% end %>
+    <%= form_tag "/inventory/new", method: :post do %>
+			<% @products.each do |product| %>
+				<%= fields_for "product[]", product do |pf| %>
+		      <tr>
+		        <td><%= product.name %></td>
+		        <td><%= product.measurement %></td>
+		        <td><%= pf.number_field :amount, class:"form-control" %></td>
+		        <%= pf.hidden_field :product_id, :value => product.id %>
+		      </tr>
+	      <% end %>
+	    <% end %>
+	     <button type="submit" class="btn btn-primary">Submit</button>
 		<% end %>
 
     </tbody>
   </table>
   </div>
 </div>
+
+
+<script type="text/javascript">
+	 $('.form-control').keydown(function (e) {
+     if (e.which === 13) {
+     		 e.preventDefault()
+         var index = $('.form-control').index(this) + 1;
+         $('.form-control').eq(index).focus();
+     }
+ 	});
+</script>
