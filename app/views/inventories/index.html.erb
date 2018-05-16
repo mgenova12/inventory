@@ -1,2 +1,26 @@
-<h1>Inventories#index</h1>
-<p>Find me in app/views/inventories/index.html.erb</p>
+<h1>All your orders</h1>
+
+<div class="table-responsive">          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Date placed</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+
+	<% @orders.each do |order| %>
+	  <tr>
+	    <td><%= order.id %></td>
+	    <td><%= order.created_at %></td>	
+	    <td><a href="/inventory/<%= order.id %>">View </a> </td>	
+	 </tr>
+	<% end %>
+
+    </tbody>
+  </table>
+
+  </div>
+</div>

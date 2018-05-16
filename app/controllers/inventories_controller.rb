@@ -1,5 +1,7 @@
 class InventoriesController < ApplicationController
   def index
+    @orders = Order.all
+
   end
 
   def new
@@ -14,7 +16,7 @@ class InventoriesController < ApplicationController
 
     params[:product].values.each do |product|
 
-      Invent.create!(
+      Invent.create(
         amount: product['amount'].to_i,
         product_id: product["product_id"].to_i,
         order_id: order.id
