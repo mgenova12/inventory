@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/inventory/:id' => 'inventories#show'
 
   get '/products/new' => 'products#new'
+  post '/products' => 'products#create'
 
 
 end

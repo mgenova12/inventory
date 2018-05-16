@@ -5,20 +5,19 @@
     <thead>
       <tr>
         <th>Product</th>
+        <th>Max</th>
         <th>Current Quantity</th>
         <th>Quantity Needed</th>
       </tr>
     </thead>
     <tbody>
-
-
+    	
 	  <tr>
-
-
 	<% @inventories.each do |inventory| %>
 	    <td><%= inventory.product.name %></td>
+	    <td><%= inventory.product.max %></td>	
 	    <td><%= inventory.amount %></td>	
-	    <td>amount-max</td>
+	    <td><%= inventory.product.max.to_i - inventory.amount  %></td>
 	 </tr>
 
 	 <% end %>
