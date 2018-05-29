@@ -18,7 +18,79 @@
 	  <div class="form-group">
 	    <label>Thursday Max Amount</label>
 	    <input type="number" class="form-control" name="thursday_max" value='<%= @product.thursday_max %>'  required>
+	  </div>	
+
+	  <div class="form-group">
+	    <label>Prepped</label>
+	    <select class="form-control" name="prepped" required>
+	    <% if @product.prepped == true %>
+	      <option value="true" selected>Prepped</option>
+	    <% else %>
+	      <option value="true">Prepped</option>
+	    <% end %>
+
+
+	    <% if @product.prepped == false %>
+	      <option value="false" selected>Not Prepped</option>
+	    <% else %>
+	      <option value="false">Not Prepped</option>
+	    <% end %>
+
+	    </select>	  	
+	  </div>
+	  <div class="form-group">
+	    <label>Item Type</label>
+	    <select class="form-control" name="item_type" required>
+	    <% if @product.item_type == 'dry' %>
+	     	<option value="dry" selected>Dry</option>
+	    <% else %>
+	     	<option value="dry">Dry</option>
+	    <% end  %>
+
+	    <% if @product.item_type == 'refigerated' %>
+	      	<option value="refigerated" selected>Refigerated</option>
+	    <% else %>
+	      	<option value="refigerated">Refigerated</option>
+		<% end %>
+	      
+	    <% if @product.item_type == 'frozen' %>
+	      	<option value="frozen" selected>Frozen</option>
+	    <% else %>
+	      	<option value="frozen">Frozen</option>
+		<% end %>
+	    </select>	 
 	  </div>	  
+
+	  <div class="form-group">
+	    <label>Location</label>
+	    <select class="form-control" name="location" required>
+	      <option value='<%= @product.location %>'><%= @product.location %></option>
+	      <option value="Walk-in Self 1">Walk-in Self 1</option>
+	      <option value="Walk-in Self 2">Walk-in Self 2</option>
+	      <option value="Walk-in Self 3">Walk-in Self 3</option>
+	      <option value="Walk-in Self 4">Walk-in Self 4</option>
+	      <option value="Walk-in Self 5">Walk-in Self 5</option>
+	      <option value="Walk-in Self 6">Walk-in Self 6</option>
+	      <option value="Walk-in Floor">Walk-in Floor</option>
+	      <option value="Right Freezer Door">Right Freezer Door</option>
+	      <option value="Left Freezer Door">Left Freezer Door</option>
+	      <option value="Chest Freezer">Chest Freezer</option>
+	      <option value="Shed location 1">Shed location 1</option>
+	      <option value="Shed location 2">Shed location 2</option>
+	      <option value="Shed location 3">Shed location 3</option>
+	      <option value="Shed location 4">Shed location 4</option>
+	      <option value="Shed location 5">Shed location 5</option>
+	      <option value="Shed location 6">Shed location 6</option>
+	      <option value="TOp of Walk-in">Top of Walk-in</option>
+	      <option value="Back Table">Back Table</option>
+	      <option value="Back Shelf">Back Shelf</option>
+	      <option value="Front Top Shelf">Front Top Shelf</option>
+	      <option value="Front Counter">Front Counter</option>
+	      <option value="Office">Office</option>
+	    </select>	 
+	  </div>	
+
+
 	  <button type="submit" class="btn btn-primary">Edit Product</button>
 	</form>
 	<% end %>

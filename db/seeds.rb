@@ -4,9 +4,9 @@
 # Examples:
 #
 
-Product.destroy_all
-Order.destroy_all
-Invent.destroy_all
+# Product.destroy_all
+# Order.destroy_all
+# Invent.destroy_all
 
 
 # 10.times do 

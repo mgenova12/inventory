@@ -11,7 +11,10 @@ class ProductsController < ApplicationController
       name: params[:name],
       measurement: params[:measurement],
       tuesday_max: params[:tuesday_max],
-      thursday_max: params[:thursday_max]
+      thursday_max: params[:thursday_max],
+      prepped: params[:prepped],
+      item_type: params[:item_type],
+      location: params[:location]
     )
     if product.save
       render 'new'
@@ -31,7 +34,10 @@ class ProductsController < ApplicationController
       name: params[:name],
       measurement: params[:measurement],
       tuesday_max: params[:tuesday_max],
-      thursday_max: params[:thursday_max]
+      thursday_max: params[:thursday_max],
+      prepped: params[:prepped],
+      item_type: params[:item_type],
+      location: params[:location]
     )
 
     redirect_to '/products'
