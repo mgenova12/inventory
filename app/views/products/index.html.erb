@@ -1,0 +1,30 @@
+
+<div class="table-responsive">          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Measurements</th>
+        <th>Tuesday Max</th>
+        <th>Thursday Max</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+	<% @products.each do |product| %>
+	  <tr>
+	    <td><%= product.name %></td>
+      	<td><%= product.measurement %></td> 
+	    <td><%= product.tuesday_max %></td>	
+	    <td><%= product.thursday_max %></td>	
+	    <td><%= link_to 'Edit', "/products/#{product.id}/edit", class: "btn btn-primary"%></td>
+	    <td><%= button_to "Delete", { action: "destroy", id: product.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %> </td>
+	 </tr>
+	<% end %>
+
+    </tbody>
+  </table>
+
+  </div>

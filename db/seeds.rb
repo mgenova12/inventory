@@ -4,6 +4,12 @@
 # Examples:
 #
 
+Product.destroy_all
+Order.destroy_all
+Invent.destroy_all
+
+
 # 10.times do 
-#   Product.create(name: Faker::Food.ingredient, measurement:['EA', 'BIN'].sample, max: rand(3..10))
+#   Product.create(name: Faker::Food.ingredient, measurement:['EA', 'BIN'].sample, tuesday_max: rand(3..10), thursday_max: rand(3..10))
 # end
+

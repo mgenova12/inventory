@@ -5,9 +5,11 @@
     <thead>
       <tr>
         <th>Product</th>
-        <th>Max</th>
+        <th>Tuesday Max</th>
+        <th>Thursday Max</th>
         <th>Current Quantity</th>
-        <th>Quantity Needed</th>
+        <th>Tuesday Quantity Needed</th>
+        <th>Thursday Quantity Needed</th>
       </tr>
     </thead>
     <tbody>
@@ -15,9 +17,11 @@
 	<% @inventories.each do |inventory| %>
 	  <tr>
 	    <td><%= inventory.product.name %></td>
-	    <td><%= inventory.product.max %></td>	
+      <td><%= inventory.product.tuesday_max %></td> 
+	    <td><%= inventory.product.thursday_max %></td>	
 	    <td><%= inventory.amount %></td>	
-	    <td><%= inventory.product.max.to_i - inventory.amount  %></td>
+      <td><%= inventory.product.tuesday_max - inventory.amount  %></td>
+	    <td><%= inventory.product.thursday_max - inventory.amount  %></td>
 	 </tr>
 	<% end %>
 
@@ -25,4 +29,5 @@
   </table>
 
   </div>
+
 </div>
