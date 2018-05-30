@@ -1,5 +1,6 @@
 <h1>Edit <%= @product.name %></h1>
 
+	
 
 	<%= form_tag "/products/#{@product.id}", method: :patch do %>
 	<form>
@@ -23,41 +24,15 @@
 	  <div class="form-group">
 	    <label>Prepped</label>
 	    <select class="form-control" name="prepped" required>
-	    <% if @product.prepped == true %>
-	      <option value="true" selected>Prepped</option>
-	    <% else %>
-	      <option value="true">Prepped</option>
-	    <% end %>
-
-
-	    <% if @product.prepped == false %>
-	      <option value="false" selected>Not Prepped</option>
-	    <% else %>
-	      <option value="false">Not Prepped</option>
-	    <% end %>
-
+	    	<%= prepped_options(@product) %>
 	    </select>	  	
 	  </div>
+
+
 	  <div class="form-group">
 	    <label>Item Type</label>
 	    <select class="form-control" name="item_type" required>
-	    <% if @product.item_type == 'dry' %>
-	     	<option value="dry" selected>Dry</option>
-	    <% else %>
-	     	<option value="dry">Dry</option>
-	    <% end  %>
-
-	    <% if @product.item_type == 'refigerated' %>
-	      	<option value="refigerated" selected>Refigerated</option>
-	    <% else %>
-	      	<option value="refigerated">Refigerated</option>
-		<% end %>
-	      
-	    <% if @product.item_type == 'frozen' %>
-	      	<option value="frozen" selected>Frozen</option>
-	    <% else %>
-	      	<option value="frozen">Frozen</option>
-		<% end %>
+	    	<%= item_type_options(@product) %>
 	    </select>	 
 	  </div>	  
 
