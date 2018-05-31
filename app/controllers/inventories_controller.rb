@@ -1,15 +1,15 @@
 class InventoriesController < ApplicationController
   def index
     @orders = Order.all
-
   end
 
   def new
-    @products = Product.all
+    @products = Product.where(deleted: false)
   end
 
   def create 
     @products = Product.all
+    
     order = Order.create(
       status: 'saved'
     )
@@ -25,13 +25,10 @@ class InventoriesController < ApplicationController
     end
 
     redirect_to "/inventory/#{order.id}"
-
   end
 
   def show
-
     @inventories = Invent.where(order_id: params[:id])
-
 
   end
 

@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   include ProductsHelper
-  
+
   def index 
-    @products = Product.all
+    @products = Product.where(deleted: false)
   end
 
   def new
@@ -16,7 +16,8 @@ class ProductsController < ApplicationController
       thursday_max: params[:thursday_max],
       prepped: params[:prepped],
       item_type: params[:item_type],
-      location: params[:location]
+      location: params[:location],
+      deleted: false
     )
     if product.save
       render 'new'
@@ -25,7 +26,6 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-
   end
 
 
@@ -49,7 +49,9 @@ class ProductsController < ApplicationController
   def destroy
     @product = Product.find(params[:id])
 
-    @product.destroy
+    @product.update(
+      deleted: true
+    )
 
     redirect_to '/products'
   end

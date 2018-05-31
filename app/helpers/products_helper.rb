@@ -21,6 +21,3 @@ module ProductsHelper
 
 end
 
-
-      # select_tag 'Prepped', options_for_select(pr.collect{ |u| [u.name, u.id] })
-
