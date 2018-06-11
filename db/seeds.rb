@@ -9,7 +9,7 @@ Order.destroy_all
 Invent.destroy_all
 
 
-# 10.times do 
-#   Product.create(name: Faker::Food.ingredient, measurement:['EA', 'BIN'].sample, tuesday_max: rand(3..10), thursday_max: rand(3..10), deleted: false)
-# end
+10.times do 
+  Product.create(name: Faker::Food.ingredient, location: ['Walk-in Self 1','Walk-in Self 2','Walk-in Self 3','Walk-in Self 4','Walk-in Self 5', 'Walk-in Self 5'].sample, measurement:['EA', 'BIN'].sample, prepped:[false, true].sample, tuesday_max: rand(3..10), thursday_max: rand(3..10), deleted: false)
+end
 

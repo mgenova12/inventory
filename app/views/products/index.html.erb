@@ -16,7 +16,7 @@
 	<% @products.each do |product| %>
 	  <tr>
 	    <td><%= product.name %></td>
-      	<td><%= product.measurement %></td> 
+      <td><%= product.measurement %></td> 
 	    <td><%= product.tuesday_max %></td>	
 	    <td><%= product.thursday_max %></td>	
 	    <td><%= link_to 'Edit', "/products/#{product.id}/edit", class: "btn btn-primary"%></td>

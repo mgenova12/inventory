@@ -8,13 +8,18 @@
         <th>Product</th>
         <th>Measurement</th>
         <th>Inventory</th>
-      </tr>
-    </thead>
-    <tbody>
+      </tr>     
+    </thead>    
 
     <%= form_tag "/inventory/new", method: :post do %>
-			<% @products.each do |product| %>
-				<%= fields_for "product[]", product do |pf| %>
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 1 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf1.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
 		      <tr>
 		        <td><%= product.name %></td>
 		        <td><%= product.measurement %></td>
@@ -24,10 +29,96 @@
 	      <% end %>
 	    <% end %>
 
-    </tbody>
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 2 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf2.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>      
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 3 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf3.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 4 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf4.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 5 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf5.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 6 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf6.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>                    
+
+
   </table>
+
       <%= submit_tag 'Submit', class:"btn btn-primary" %>
-		<% end %>
+	 <% end %>
   </div>
 </div>
 <br>
