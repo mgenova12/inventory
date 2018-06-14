@@ -1,4 +1,6 @@
 class InventoriesController < ApplicationController
+  include InventoriesHelper
+  
   def index
     @orders = Order.all
   end

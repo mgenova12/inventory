@@ -14,16 +14,42 @@
     </thead>
     <tbody>
 
-	<% @inventories.each do |inventory| %>
-	  <tr>
-	    <td><%= inventory.product.name %></td>
-      <td><%= inventory.product.tuesday_max %></td> 
-	    <td><%= inventory.product.thursday_max %></td>	
-	    <td><%= inventory.amount %></td>	
-      <td><%= inventory.product.tuesday_max - inventory.amount  %></td>
-	    <td><%= inventory.product.thursday_max - inventory.amount  %></td>
-	 </tr>
-	<% end %>
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Prepped </td>
+      </tr>
+    </thead>
+    <% @inventories.each do |inventory| %>
+  	  <% if inventory.product.prepped == true %>
+        <tr>
+    	    <td><%= inventory.product.name %></td>
+          <td><%= inventory.product.tuesday_max %></td> 
+    	    <td><%= inventory.product.thursday_max %></td>	
+    	    <td><%= inventory.amount %></td>	
+          <td><%= round_to_zero(inventory.product.tuesday_max - inventory.amount)  %></td>
+    	    <td><%= round_to_zero(inventory.product.thursday_max - inventory.amount)  %></td>
+    	 </tr>
+     <% end %>
+  	<% end %>
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Not Prepped </td>
+      </tr>
+    </thead>
+    <% @inventories.each do |inventory| %>
+      <% if inventory.product.prepped == false %>
+        <tr>
+          <td><%= inventory.product.name %></td>
+          <td><%= inventory.product.tuesday_max %></td> 
+          <td><%= inventory.product.thursday_max %></td>  
+          <td><%= inventory.amount %></td>  
+          <td><%= round_to_zero(inventory.product.tuesday_max - inventory.amount)  %></td>
+          <td><%= round_to_zero(inventory.product.thursday_max - inventory.amount)  %></td>
+       </tr>
+     <% end %>
+    <% end %>
+
 
     </tbody>
   </table>
