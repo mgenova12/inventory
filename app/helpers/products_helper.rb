@@ -16,8 +16,20 @@ module ProductsHelper
     else 
       options_for_select([["Frozen", "frozen"], ["Dry", "dry"], ["Refigerated", "refigerated"]])
     end
-
   end
+
+  def count_by_options(product)
+    if product.measurement == 'EA'
+      options_for_select([["EA", "EA"], ["BIN", "BIN"], ["SLEEVE", "SLEEVE"], ["%", "%"]])
+    elsif product.measurement == 'BIN'
+      options_for_select([["BIN", "BIN"], ["EA", "EA"], ["SLEEVE", "SLEEVE"], ["%", "%"]])
+    elsif product.measurement == 'SLEEVE'
+      options_for_select([["SLEEVE", "SLEEVE"], ["BIN", "BIN"], ["EA", "EA"], ["%", "%"]])          
+    else 
+      options_for_select([["%", "%"], ["SLEEVE", "SLEEVE"], ["BIN", "BIN"], ["EA", "EA"]])          
+    end
+  end
+
 
 end
 

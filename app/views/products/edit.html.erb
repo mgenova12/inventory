@@ -6,10 +6,19 @@
 	    <label>Product Name</label>
 	    <input type="text" class="form-control" name="name" value='<%= @product.name %>'  required>
 	  </div>
+
 	  <div class="form-group">
-	    <label>Measuremnt</label>
-	    <input type="text" class="form-control" name="measurement" value='<%= @product.measurement %>' required>
+	    <label>Count By</label>
+	   <select class="form-control" name="measurement" required>
+	   		<%= count_by_options(@product) %>
+	    </select>	
 	  </div>
+
+	  <div class="form-group">
+	    <label>Case Quantity</label>
+	    <input type="number" class="form-control" name="case_quantity" value='<%= @product.case_quantity %>'  placeholder="Leave Blank If Not Case">
+	  </div>
+
 	  <div class="form-group">
 	    <label>Tuesday Max Amount</label>
 	    <input type="number" class="form-control" name="tuesday_max" value='<%= @product.tuesday_max %>'  required>

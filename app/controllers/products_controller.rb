@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
       measurement: params[:measurement],
       tuesday_max: params[:tuesday_max],
       thursday_max: params[:thursday_max],
+      case_quantity: params[:case_quantity],
       prepped: params[:prepped],
       item_type: params[:item_type],
       location: params[:location],
@@ -37,6 +38,7 @@ class ProductsController < ApplicationController
       measurement: params[:measurement],
       tuesday_max: params[:tuesday_max],
       thursday_max: params[:thursday_max],
+      case_quantity: params[:case_quantity],
       prepped: params[:prepped],
       item_type: params[:item_type],
       location: params[:location]

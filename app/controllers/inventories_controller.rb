@@ -34,7 +34,8 @@ class InventoriesController < ApplicationController
     @products = Product.all
     
     order = Order.create(
-      status: 'saved'
+      status: 'saved',
+      message: params['message']
     )
 
     params[:product].values.each do |product|
@@ -52,7 +53,7 @@ class InventoriesController < ApplicationController
 
   def show
     @inventories = Invent.where(order_id: params[:id])
-
+    @order_message = Order.find(params[:id]).message
   end
 
 end
