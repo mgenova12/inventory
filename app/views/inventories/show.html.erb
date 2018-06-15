@@ -25,9 +25,9 @@
     	    <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td> 
     	    <td><%= inventory.product.thursday_max %></td>	
-    	    <td><%= inventory.amount %></td>	
-          <td><%= round_to_zero(inventory.product.tuesday_max - inventory.amount)  %></td>
-    	    <td><%= round_to_zero(inventory.product.thursday_max - inventory.amount)  %></td>
+    	    <td><%= add_percent(inventory) %></td>	
+          <td><%= tuesday_quantity_needed(inventory)  %></td>
+          <td><%= thursday_quantity_needed(inventory) %></td>
     	 </tr>
      <% end %>
   	<% end %>
@@ -43,9 +43,9 @@
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td> 
           <td><%= inventory.product.thursday_max %></td>  
-          <td><%= inventory.amount %></td>  
-          <td><%= round_to_zero(inventory.product.tuesday_max - inventory.amount)  %></td>
-          <td><%= round_to_zero(inventory.product.thursday_max - inventory.amount)  %></td>
+          <td><%= add_percent(inventory)  %></td>  
+          <td><%= tuesday_quantity_needed(inventory)  %></td>
+          <td><%= thursday_quantity_needed(inventory) %></td>
        </tr>
      <% end %>
     <% end %>
