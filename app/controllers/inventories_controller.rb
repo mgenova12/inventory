@@ -38,17 +38,20 @@ class InventoriesController < ApplicationController
       message: params['message']
     )
 
+    
+
     params[:product].values.each do |product|
 
-    Invent.create(
-      amount: product['amount'].to_i,
-      product_id: product["product_id"].to_i,
-      order_id: order.id
-    )
+      Invent.create(
+        amount: product['amount'].to_i,
+        product_id: product["product_id"].to_i,
+        order_id: order.id
+      )
 
     end
 
     redirect_to "/inventory/#{order.id}"
+
   end
 
   def show

@@ -5,8 +5,8 @@
 #
 
 # Product.destroy_all
-# Order.destroy_all
-# Invent.destroy_all
+Order.destroy_all
+Invent.destroy_all
 
 
 # 15.times do 
