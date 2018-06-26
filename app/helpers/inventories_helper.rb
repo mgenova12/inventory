@@ -10,7 +10,7 @@ module InventoriesHelper
       percent <= 0.25 ? "#{1} CASE" : "#{0} CASE"
     else 
       result = (invent.product.tuesday_max - invent.amount)
-      result > 0 ? "#{result} #{invent.product.measurement}" : "#{0} CASE"
+      result > 0 ? "#{result} #{invent.product.measurement}" : "#{0} #{invent.product.measurement}"
     end
   end
 
@@ -23,7 +23,7 @@ module InventoriesHelper
       "#{0} CASE"
     else 
       result = (invent.product.thursday_max - invent.amount)
-      result > 0 ? "#{result} #{invent.product.measurement}" : "#{0} CASE"
+      result > 0 ? "#{result} #{invent.product.measurement}" : "#{0} #{invent.product.measurement}"
     end
   end
 
