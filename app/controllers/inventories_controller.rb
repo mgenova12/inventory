@@ -38,25 +38,39 @@ class InventoriesController < ApplicationController
       message: params['message']
     )
 
-    
-
     params[:product].values.each do |product|
-
       Invent.create(
         amount: product['amount'].to_i,
         product_id: product["product_id"].to_i,
         order_id: order.id
       )
-
     end
 
     redirect_to "/inventory/#{order.id}"
-
   end
 
   def show
+    @order_id = params[:id]
     @inventories = Invent.where(order_id: params[:id])
     @order_message = Order.find(params[:id]).message
   end
+
+  def tuesday
+    @order_id = params[:id]
+    @inventories = Invent.where(order_id: params[:id])
+    @order_message = Order.find(params[:id]).message
+
+    render 'tuesday.html.erb'
+  end
+
+  def thursday
+    @order_id = params[:id]
+    @inventories = Invent.where(order_id: params[:id])
+    @order_message = Order.find(params[:id]).message
+
+    render 'thursday.html.erb'
+  end
+
+
 
 end

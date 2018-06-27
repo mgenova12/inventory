@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/inventory/new' => 'inventories#create'
 
   get '/inventory/:id' => 'inventories#show'
+  get '/inventory/:id/tuesday' => 'inventories#tuesday'
+  get '/inventory/:id/thursday' => 'inventories#thursday'
 
   get '/products' => 'products#index'
   get '/products/new' => 'products#new'
