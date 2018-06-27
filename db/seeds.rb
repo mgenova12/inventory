@@ -14,7 +14,7 @@ end
 order_num = 0
 Order.all.count.times do
   Product.all.each do |product|
-    Invent.create(product_id: product.id, amount:rand(1..100), order_id: Order.all.ids[order_num])
+    Invent.create(product_id: product.id, amount:rand(1..30), order_id: Order.all.ids[order_num])
   end
   order_num +=1 
 end
