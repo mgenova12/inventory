@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   include ProductsHelper
 
   def index 
-    @products = Product.where(deleted: false)
+    @products = Product.where(deleted: false).order(:name)
   end
 
   def new
