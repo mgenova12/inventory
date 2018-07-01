@@ -1,4 +1,4 @@
-class ProductsController < ApplicationController
+class Dover::ProductsController < ApplicationController
   include ProductsHelper
   before_action :authenticate_user!
 
@@ -45,7 +45,7 @@ class ProductsController < ApplicationController
       location: params[:location]
     )
 
-    redirect_to '/products'
+    redirect_to '/dover/products'
 
   end
 
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
       deleted: true
     )
 
-    redirect_to '/products'
+    redirect_to '/dover/products'
   end
 
 end

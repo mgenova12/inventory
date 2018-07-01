@@ -1,3 +1,4 @@
+<%= render partial: 'shared/navbar' %>
 
 <div class="table-responsive">          
   <table class="table table-striped">
@@ -27,7 +28,7 @@
       <td><%= product.prepped %> </td>
       <td><%= product.item_type %> </td>
       <td><%= product.location %> </td>
-	    <td><%= link_to 'Edit', "/products/#{product.id}/edit", class: "btn btn-primary"%></td>
+	    <td><%= link_to 'Edit', "/dover/products/#{product.id}/edit", class: "btn btn-primary"%></td>
 	    <td><%= button_to "Delete", { action: "destroy", id: product.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %> </td>
 	 </tr>
 	<% end %>

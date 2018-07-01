@@ -17,15 +17,6 @@
 
   </head>
 
-<% if user_signed_in? %>
-  <ul>
-    <li><a href="/products/new">Add New Product</a></li>
-    <li><a href="/inventory/new">Create new Inventory</a></li>
-    <li><a href="/">View all orders</a></li>
-    <li><a href="/products">View all products</a></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
-  </ul>
-<% end %>
 
 
   <body class="container-fluid">
