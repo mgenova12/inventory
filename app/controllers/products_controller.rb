@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   include ProductsHelper
+  before_action :authenticate_user!
 
   def index 
     @products = Product.where(deleted: false).order(:name)

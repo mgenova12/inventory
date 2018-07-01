@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get '/inventory' => 'inventories#index'
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+
+  root :to => 'inventories#index'
   get '/inventory/new' => 'inventories#new'
   post '/inventory/new' => 'inventories#create'
 

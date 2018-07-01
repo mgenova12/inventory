@@ -1,5 +1,6 @@
 class InventoriesController < ApplicationController
   include InventoriesHelper
+  before_action :authenticate_user!
   
   def index
     @orders = Order.all
