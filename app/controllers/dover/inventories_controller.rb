@@ -1,5 +1,6 @@
-class InventoriesController < ApplicationController
+class Dover::InventoriesController < ApplicationController
   include InventoriesHelper
+  before_action :authenticate_user!
   
   def index
     @orders = Order.all
@@ -46,7 +47,7 @@ class InventoriesController < ApplicationController
       )
     end
 
-    redirect_to "/inventory/#{order.id}"
+    redirect_to "/dover/inventory/#{order.id}"
   end
 
   def show
@@ -70,7 +71,5 @@ class InventoriesController < ApplicationController
 
     render 'thursday.html.erb'
   end
-
-
 
 end

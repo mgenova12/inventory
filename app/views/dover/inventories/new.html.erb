@@ -1,5 +1,6 @@
-<h1>Prep Center Order List</h1>
+<%= render partial: 'shared/navbar' %>
 
+<h1>Prep Center Order List</h1>
 
 <div class="table-responsive">          
   <table class="table table-striped">
@@ -11,7 +12,7 @@
       </tr>     
     </thead>    
 
-    <%= form_tag "/inventory/new", method: :post do %>
+    <%= form_tag "/dover/inventory/new", method: :post do %>
       <thead>
         <tr> 
           <td align="center" colspan="3">WALK-IN Shelf 1 </td>

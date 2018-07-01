@@ -7,17 +7,17 @@
 Order.destroy_all
 Invent.destroy_all
 
-20.times do 
-  Order.create(status: 'saved')
-end
+# 20.times do 
+#   Order.create(status: 'saved')
+# end
 
-order_num = 0
-Order.all.count.times do
-  Product.all.each do |product|
-    Invent.create(product_id: product.id, amount:rand(1..30), order_id: Order.all.ids[order_num])
-  end
-  order_num +=1 
-end
+# order_num = 0
+# Order.all.count.times do
+#   Product.all.each do |product|
+#     Invent.create(product_id: product.id, amount:rand(1..30), order_id: Order.all.ids[order_num])
+#   end
+#   order_num +=1 
+# end
 
 
 #Product.where(deleted: true).destroy_all
