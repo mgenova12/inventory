@@ -3,7 +3,7 @@ class Dover::InventoriesController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @orders = Order.all
+    @orders = Order.all.reverse_order
   end
 
   def new
