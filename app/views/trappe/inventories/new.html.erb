@@ -1,0 +1,401 @@
+<%= render partial: 'shared/trappeNav' %>
+
+<h1>Prep Center Order List</h1>
+
+<div class="table-responsive">          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Count By</th>
+        <th>Inventory</th>
+      </tr>     
+    </thead>    
+
+    <%= form_tag "/trappe/inventory/new", method: :post do %>
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 1 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf1.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+		      <tr>
+		        <td><%= product.name %></td>
+		        <td><%= product.measurement %></td>
+		        <td><%= pf.number_field :amount, class:"form-control", required: "true", required: "true" %></td>
+		        <%= pf.hidden_field :product_id, :value => product.id %>
+		      </tr>
+	      <% end %>
+	    <% end %>
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 2 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf2.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>      
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 3 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf3.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 4 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf4.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 5 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf5.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Shelf 6 </td>
+        </tr>
+      </thead>
+
+      <% @walkin_shelf6.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>                    
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">WALK-IN Floor </td>
+        </tr>
+      </thead>
+
+      <% @walkin_floor.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Top WALK-IN </td>
+        </tr>
+      </thead>
+
+      <% @top_walkin.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>        
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Right Freezer Door </td>
+        </tr>
+      </thead>
+
+      <% @right_freezer_door.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Left Freezer Door </td>
+        </tr>
+      </thead>
+
+      <% @left_freezer_door.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Chest Freezer </td>
+        </tr>
+      </thead>
+
+      <% @chest_freezer.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Shed Location 1</td>
+        </tr>
+      </thead>
+
+      <% @shed_location1.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Shed Location 2</td>
+        </tr>
+      </thead>
+
+      <% @shed_location2.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Shed Location 3</td>
+        </tr>
+      </thead>
+
+      <% @shed_location3.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Shed Location 4</td>
+        </tr>
+      </thead>
+
+      <% @shed_location4.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Shed Location 5</td>
+        </tr>
+      </thead>
+
+      <% @shed_location5.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Shed Location 6</td>
+        </tr>
+      </thead>
+
+      <% @shed_location6.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Back Table</td>
+        </tr>
+      </thead>
+
+      <% @back_table.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Back Shelf</td>
+        </tr>
+      </thead>
+
+      <% @back_shelf.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Front Top Counter</td>
+        </tr>
+      </thead>
+
+      <% @front_top_counter.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Front Counter</td>
+        </tr>
+      </thead>
+
+      <% @front_counter.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>  
+
+      <thead>
+        <tr> 
+          <td align="center" colspan="3">Office</td>
+        </tr>
+      </thead>
+
+      <% @office.each do |product| %>
+        <%= fields_for "product[]", product do |pf| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+          </tr>
+        <% end %>
+      <% end %>                          
+
+  </table>
+  
+      <div class="form-group">
+        <label>Notes:</label>
+        <textarea class="form-control" rows="5" name="message"></textarea>
+      </div>
+
+      <%= submit_tag 'Submit', class:"btn btn-primary" %>
+	 <% end %>
+  </div>
+</div>
+<br>

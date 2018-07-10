@@ -1,0 +1,2 @@
+class TrappeOrder < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class TrappeProduct < ApplicationRecord
+end

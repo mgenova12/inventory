@@ -4,8 +4,13 @@
 # Examples:
 #
 
-Order.destroy_all
-Invent.destroy_all
+# Order.destroy_all
+# Invent.destroy_all
+TrappeProduct.destroy_all
+TrappeOrder.destroy_all
+TrappeInvent.destroy_all
+
+
 
 # 20.times do 
 #   Order.create(status: 'saved')
