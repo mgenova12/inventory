@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   root :to => 'stores#index'
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
+
+  resources :users, except: :create
+  post 'create_user' => 'users#create', as: :create_user
   
   namespace :dover do
     get '/inventory' => 'inventories#index'

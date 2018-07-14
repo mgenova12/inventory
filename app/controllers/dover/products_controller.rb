@@ -1,7 +1,8 @@
 class Dover::ProductsController < ApplicationController
   include ProductsHelper
   before_action :authenticate_user!
-
+  before_filter :authorize_admin
+  
   def index 
     @products = Product.where(deleted: false).order(:name)
   end

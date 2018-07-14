@@ -1,6 +1,7 @@
 class Trappe::InventoriesController < ApplicationController
   include TrappeInventoriesHelper
   before_action :authenticate_user!
+  before_filter :authorize_trappe
   
   def index
     @orders = TrappeOrder.all.reverse_order

@@ -6,7 +6,10 @@
     <li><a href="/trappe/inventory/new">Create new Inventory</a></li>
     <li><a href="/trappe/inventory">View all orders</a></li>
     <li><a href="/trappe/products">View all products</a></li>
-    <li><a href="/sign_up">Create User</a></li>
+    <li><a href="/">Choose Store</a></li>
+    <% if current_user.admin? %>
+    	<li><a href="/users/new">Create User</a></li>
+    <% end %>
     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>    
   </ul>
 </div>

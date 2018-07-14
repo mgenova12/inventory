@@ -1,0 +1,12 @@
+<% if current_user.admin? %>
+
+<div class='navbar'>
+  <ul>
+    <li><a href="/">Choose Store</a></li>
+    <li><a href="/users/new">Create User</a></li>
+    <li><a href="/users">All Users</a></li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>    
+  </ul>
+</div>
+
+<% end %>

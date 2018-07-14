@@ -11,5 +11,16 @@ class ApplicationController < ActionController::Base
     new_user_session_path
   end
 
+  def authorize_admin
+    redirect_to root_path, alert: 'Access Denied' unless current_user.admin?
+  end
+
+  def authorize_dover
+    redirect_to root_path, alert: 'Access Denied' unless current_user.dover? || current_user.admin?
+  end 
+
+  def authorize_trappe
+    redirect_to root_path, alert: 'Access Denied' unless current_user.trappe? || current_user.admin?
+  end
 
 end
