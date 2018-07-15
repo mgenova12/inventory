@@ -31,6 +31,20 @@
 	  </div>	
 
 	  <div class="form-group">
+	    <label>Distributor</label>
+	   <select class="form-control" name="supplier" required>
+	      <option value=""></option>
+	      <option value="US Foods">US Foods</option>
+	      <option value="Sysco">Sysco</option>
+	      <option value="Gordon">Gordon</option>
+	      <option value="Espo">Espo</option>
+	      <option value="Holt">Holt</option>
+	      <option value="Jetro">Jetro</option>
+	      <option value="PrepCenter">Prep Center</option>
+	    </select>	
+	  </div>
+
+	  <div class="form-group">
 	    <label>Prepped</label>
 	    <select class="form-control" name="prepped" required>
 	    	<%= prepped_options(@product) %>
