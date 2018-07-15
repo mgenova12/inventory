@@ -1,6 +1,6 @@
 module TrappeInventoriesHelper
 
-  def tuesday_quantity_needed(invent)
+  def trappe_tuesday_quantity_needed(invent)
     if invent.trappe_product.case_quantity
       case_amount = invent.trappe_product.tuesday_max.to_i - invent.amount
       case_result = (case_amount.to_f / invent.trappe_product.case_quantity.to_f).ceil
@@ -14,7 +14,7 @@ module TrappeInventoriesHelper
     end
   end
 
-  def thursday_quantity_needed(invent)
+  def trappe_thursday_quantity_needed(invent)
     if invent.trappe_product.case_quantity
       case_amount = invent.trappe_product.thursday_max.to_i - invent.amount
       case_result = (case_amount.to_f / invent.trappe_product.case_quantity.to_f).ceil
@@ -27,7 +27,7 @@ module TrappeInventoriesHelper
     end
   end
 
-  def add_percent(invent)
+  def trappe_add_percent(invent)
     if invent.trappe_product.measurement == '%'
       number_to_percentage(invent.amount, precision: 0)
     else 

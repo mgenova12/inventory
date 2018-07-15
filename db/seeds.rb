@@ -6,9 +6,15 @@
 
 # Order.destroy_all
 # Invent.destroy_all
-TrappeProduct.destroy_all
-TrappeOrder.destroy_all
-TrappeInvent.destroy_all
+# TrappeProduct.destroy_all
+# TrappeOrder.destroy_all
+# TrappeInvent.destroy_all
+
+User.destroy_all
+
+# dont put in seed file!!!
+User.create(email: , role:0, password: , password_confirmation:)
+
 
 
 
