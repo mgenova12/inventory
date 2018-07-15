@@ -1,7 +1,7 @@
 module TrappeInventoriesHelper
 
   def trappe_tuesday_quantity_needed(invent)
-    if invent.trappe_product.case_quantity
+    if invent.trappe_product.case_quantity != ""
       case_amount = invent.trappe_product.tuesday_max.to_i - invent.amount
       case_result = (case_amount.to_f / invent.trappe_product.case_quantity.to_f).ceil
       case_result > 0 ? "#{case_result} CASE" : "#{0} CASE"
@@ -15,7 +15,7 @@ module TrappeInventoriesHelper
   end
 
   def trappe_thursday_quantity_needed(invent)
-    if invent.trappe_product.case_quantity
+    if invent.trappe_product.case_quantity != ""
       case_amount = invent.trappe_product.thursday_max.to_i - invent.amount
       case_result = (case_amount.to_f / invent.trappe_product.case_quantity.to_f).ceil
       case_result > 0 ? "#{case_result} CASE" : "#{0} CASE"

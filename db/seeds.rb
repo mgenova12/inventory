@@ -13,7 +13,7 @@
 User.destroy_all
 
 # dont put in seed file!!!
-User.create(email: , role:0, password: , password_confirmation:)
+
 
 
 
