@@ -44,3 +44,34 @@ thead td {
 .navbar li a:hover {
     background-color: #111;
 }
+
+
+.supplier ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.supplier li {
+    float: left;
+}
+
+.supplier li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 8px 12px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.supplier li a:hover {
+    background-color: #111;
+}
+
+
+
+
+

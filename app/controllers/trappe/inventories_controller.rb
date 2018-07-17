@@ -57,19 +57,15 @@ class Trappe::InventoriesController < ApplicationController
     @order_message = TrappeOrder.find(params[:id]).message
   end
 
-  def tuesday
+  def supplier
+    @supplier = params[:supplier]
     @order_id = params[:id]
     @inventories = TrappeInvent.where(order_id: params[:id])
     @order_message = TrappeOrder.find(params[:id]).message
 
-    render 'tuesday.html.erb'
+    render 'supplier.html.erb'
   end
 
-  def thursday
-    @order_id = params[:id]
-    @inventories = TrappeInvent.where(order_id: params[:id])
-    @order_message = TrappeOrder.find(params[:id]).message
 
-    render 'thursday.html.erb'
-  end
+
 end

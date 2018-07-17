@@ -28,8 +28,8 @@ Rails.application.routes.draw do
     get '/inventory/new' => 'inventories#new'
     post '/inventory/new' => 'inventories#create'
     get '/inventory/:id' => 'inventories#show'
-    get '/inventory/:id/tuesday' => 'inventories#tuesday'
-    get '/inventory/:id/thursday' => 'inventories#thursday'
+
+    get '/inventory/:id/:supplier' => 'inventories#supplier'
 
     get '/products' => 'products#index'
     get '/products/new' => 'products#new'

@@ -9,12 +9,9 @@
 # TrappeProduct.destroy_all
 # TrappeOrder.destroy_all
 # TrappeInvent.destroy_all
+  
 
-User.destroy_all
-
-# dont put in seed file!!!
-
-
+TrappeProduct.where(supplier:'US Foods').update_all(supplier: 'USFoods')
 
 
 
