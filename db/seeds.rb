@@ -6,12 +6,11 @@
 
 # Order.destroy_all
 # Invent.destroy_all
-# TrappeProduct.destroy_all
-# TrappeOrder.destroy_all
-# TrappeInvent.destroy_all
+
+TrappeOrder.destroy_all
+TrappeInvent.destroy_all
   
 
-TrappeProduct.where(supplier:'US Foods').update_all(supplier: 'USFoods')
 
 
 

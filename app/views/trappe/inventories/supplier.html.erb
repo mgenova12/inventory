@@ -12,7 +12,6 @@
     <li><a href="/trappe/inventory/<%= @order_id %>/Holt">Holt </a> </li>
     <li><a href="/trappe/inventory/<%= @order_id %>/Jetro">Jetro </a> </li>
     <li><a href="/trappe/inventory/<%= @order_id %>/PrepCenter">PrepCenter </a> </li>
-    <li><a href="/trappe/inventory/<%= @order_id %>/Holt">Holt </a> </li>
   </ul>
 </div>
 
@@ -144,7 +143,7 @@
     </thead>  
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'dry' && inventory.trappe_product.supplier == @supplier %>
+      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'dry' &&inventory.trappe_product.supplier == @supplier %>
         <tr>
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
