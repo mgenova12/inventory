@@ -1,0 +1,174 @@
+<%= render partial: 'shared/cambridgeNav' %>
+
+<h1>All Orders</h1>
+<div class='supplier'>
+  <ul> 
+    <li><a href="/cambridge/inventory/<%= @order_id %>">All </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/USFoods">US Foods </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Sysco">Sysco </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Gordon">Gordon </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Espo">Espo </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Holt">Holt </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Jetro">Jetro </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/PrepCenter">PrepCenter </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Sams">Sams </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Walmart">Walmart </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Amazon">Amazon </a> </li>
+    <li><a href="/cambridge/inventory/<%= @order_id %>/Ecolab">Ecolab </a> </li>
+  </ul>
+</div>
+
+<div class="table-responsive">          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Tuesday Max</th>
+        <th>Thursday Max</th>
+        <th>Current Quantity</th>
+        <th>Tuesday Quantity Needed</th>
+        <th>Thursday Quantity Needed</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Prepped </td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Frozen </td>
+      </tr>
+    </thead>    
+    <% @inventories.each do |inventory| %>
+      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'frozen'%>
+        <tr>
+          <td><%= inventory.cambridge_product.name %></td>
+          <td><%= inventory.cambridge_product.tuesday_max %></td> 
+          <td><%= inventory.cambridge_product.thursday_max %></td>  
+          <td><%= cambridge_add_percent(inventory) %></td>  
+          <td><%= cambridge_tuesday_quantity_needed(inventory) %></td>
+          <td><%= cambridge_thursday_quantity_needed(inventory) %></td>
+       </tr>
+      <% end %>
+    <% end %>
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Refrigerated </td>
+      </tr>
+    </thead>    
+
+    <% @inventories.each do |inventory| %>
+      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'refrigerated'%>
+        <tr>
+          <td><%= inventory.cambridge_product.name %></td>
+          <td><%= inventory.cambridge_product.tuesday_max %></td> 
+          <td><%= inventory.cambridge_product.thursday_max %></td>  
+          <td><%= cambridge_add_percent(inventory) %></td>  
+          <td><%= cambridge_tuesday_quantity_needed(inventory)  %></td>
+          <td><%= cambridge_thursday_quantity_needed(inventory) %></td>
+       </tr>
+      <% end %>
+    <% end %>
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Dry </td>
+      </tr>
+    </thead>       
+
+    <% @inventories.each do |inventory| %>
+      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'dry'%>
+        <tr>
+          <td><%= inventory.cambridge_product.name %></td>
+          <td><%= inventory.cambridge_product.tuesday_max %></td> 
+          <td><%= inventory.cambridge_product.thursday_max %></td>  
+          <td><%= cambridge_add_percent(inventory) %></td>  
+          <td><%= cambridge_tuesday_quantity_needed(inventory)  %></td>
+          <td><%= cambridge_thursday_quantity_needed(inventory) %></td>
+       </tr>
+      <% end %>
+    <% end %>
+
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Not Prepped </td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Frozen </td>
+      </tr>
+    </thead>    
+
+    <% @inventories.each do |inventory| %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'frozen'%>
+        <tr>
+          <td><%= inventory.cambridge_product.name %></td>
+          <td><%= inventory.cambridge_product.tuesday_max %></td> 
+          <td><%= inventory.cambridge_product.thursday_max %></td>  
+          <td><%= cambridge_add_percent(inventory) %></td>  
+          <td><%= cambridge_tuesday_quantity_needed(inventory)  %></td>
+          <td><%= cambridge_thursday_quantity_needed(inventory) %></td>
+       </tr>
+      <% end %>
+    <% end %>    
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Refrigerated </td>
+      </tr>
+    </thead>    
+
+    <% @inventories.each do |inventory| %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'refrigerated'%>
+        <tr>
+          <td><%= inventory.cambridge_product.name %></td>
+          <td><%= inventory.cambridge_product.tuesday_max %></td> 
+          <td><%= inventory.cambridge_product.thursday_max %></td>  
+          <td><%= cambridge_add_percent(inventory) %></td>  
+          <td><%= cambridge_tuesday_quantity_needed(inventory)  %></td>
+          <td><%= cambridge_thursday_quantity_needed(inventory) %></td>
+       </tr>
+      <% end %>
+    <% end %>
+
+    <thead>
+      <tr> 
+        <td align="center" colspan="6">Dry </td>
+      </tr>
+    </thead>  
+
+    <% @inventories.each do |inventory| %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'dry'%>
+        <tr>
+          <td><%= inventory.cambridge_product.name %></td>
+          <td><%= inventory.cambridge_product.tuesday_max %></td> 
+          <td><%= inventory.cambridge_product.thursday_max %></td>  
+          <td><%= cambridge_add_percent(inventory) %></td>  
+          <td><%= cambridge_tuesday_quantity_needed(inventory)  %></td>
+          <td><%= cambridge_thursday_quantity_needed(inventory) %></td>
+       </tr>
+      <% end %>
+    <% end %>    
+
+
+    </tbody>
+  </table>
+    Notes:
+    <br>
+      <%= @order_message %>
+    <br>
+    <br>
+    <br>
+
+  </div>
+
+</div>
+

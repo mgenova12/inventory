@@ -1,0 +1,2 @@
+class CambridgeProduct < ApplicationRecord
+end

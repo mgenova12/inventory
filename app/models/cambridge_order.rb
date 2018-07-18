@@ -1,0 +1,2 @@
+class CambridgeOrder < ApplicationRecord
+end

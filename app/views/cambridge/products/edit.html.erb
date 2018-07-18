@@ -1,79 +1,68 @@
-<%= render partial: 'shared/trappeNav' %>
+<%= render partial: 'shared/cambridgeNav' %>
 
-<h1>Add a new Product</h1>
 
-	<%= form_tag "/trappe/products", method: :post do %>
+<h1>Edit <%= @product.name %></h1>
+
+	<%= form_tag "/cambridge/products/#{@product.id}", method: :patch do %>
 	<form>
 	  <div class="form-group">
 	    <label>Product Name</label>
-	    <input type="text" class="form-control" name="name" placeholder="Enter Product Name" required>
+	    <input type="text" class="form-control" name="name" value='<%= @product.name %>'  required>
 	  </div>
+
 	  <div class="form-group">
 	    <label>Count By</label>
 	   <select class="form-control" name="measurement" required>
-	      <option value=""></option>
-	      <option value="EA">EA</option>
-	      <option value="BIN">BIN</option>
-	      <option value="SLEEVE">SLEEVE</option>
-	      <option value="%">%</option>
+	   		<%= count_by_options(@product) %>
 	    </select>	
 	  </div>
 
 	  <div class="form-group">
 	    <label>Case Quantity</label>
-	    <input type="number" class="form-control" name="case_quantity" placeholder="Leave Blank If Not Case">
+	    <input type="number" class="form-control" name="case_quantity" value='<%= @product.case_quantity %>'  placeholder="Leave Blank If Not Case">
 	  </div>
 
 	  <div class="form-group">
 	    <label>Tuesday Max Amount</label>
-	    <input type="number" class="form-control" name="tuesday_max" placeholder="Enter Tuesday Max" required>
+	    <input type="number" class="form-control" name="tuesday_max" value='<%= @product.tuesday_max %>'  required>
 	  </div>
 	  <div class="form-group">
 	    <label>Thursday Max Amount</label>
-	    <input type="number" class="form-control" name="thursday_max" placeholder="Enter Thursday Max" required>
+	    <input type="number" class="form-control" name="thursday_max" value='<%= @product.thursday_max %>'  required>
 	  </div>	
 
 	  <div class="form-group">
 	    <label>Distributor</label>
 	   <select class="form-control" name="supplier" required>
 	      <option value=""></option>
-	      <option value="USFoods">US Foods</option>
+	      <option value="US Foods">US Foods</option>
 	      <option value="Sysco">Sysco</option>
 	      <option value="Gordon">Gordon</option>
 	      <option value="Espo">Espo</option>
 	      <option value="Holt">Holt</option>
 	      <option value="Jetro">Jetro</option>
 	      <option value="PrepCenter">Prep Center</option>
-	      <option value="Sams">Sams</option>
-	      <option value="Walmart">Walmart</option>
-	      <option value="Amazon">Amazon</option>
-	      <option value="Ecolab">Ecolab</option>
 	    </select>	
 	  </div>
-
 
 	  <div class="form-group">
 	    <label>Prepped</label>
 	    <select class="form-control" name="prepped" required>
-	      <option value=""></option>
-	      <option value="true">Prepped</option>
-	      <option value="false">Not Prepped</option>
+	    	<%= prepped_options(@product) %>
 	    </select>	  	
 	  </div>
+
 	  <div class="form-group">
 	    <label>Item Type</label>
 	    <select class="form-control" name="item_type" required>
-	      <option value=""></option>
-	      <option value="dry">Dry</option>
-	      <option value="refrigerated">Refrigerated</option>
-	      <option value="frozen">Frozen</option>
+	    	<%= item_type_options(@product) %>
 	    </select>	 
 	  </div>	  
 
 	  <div class="form-group">
 	    <label>Location</label>
 	    <select class="form-control" name="location" required>
-	      <option value=""></option>
+	      <option value='<%= @product.location %>'><%= @product.location %></option>
 	      <option value="Walk-in Self 1">Walk-in Self 1</option>
 	      <option value="Walk-in Self 2">Walk-in Self 2</option>
 	      <option value="Walk-in Self 3">Walk-in Self 3</option>
@@ -96,15 +85,12 @@
 	      <option value="Front Top Shelf">Front Top Shelf</option>
 	      <option value="Front Counter">Front Counter</option>
 	      <option value="Office">Office</option>
-
 	    </select>	 
 	  </div>	
 
-	  <button type="submit" class="btn btn-primary">Submit</button>
+	  <button type="submit" class="btn btn-primary">Edit Product</button>
 	</form>
 	<% end %>
-
 	<br>
-
 
 
