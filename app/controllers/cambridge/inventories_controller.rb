@@ -1,7 +1,7 @@
 class Cambridge::InventoriesController < ApplicationController
   include CambridgeInventoriesHelper
   before_action :authenticate_user!
-  # before_filter :authorize_trappe
+  before_filter :authorize_cambridge
   
   def index
     @orders = CambridgeOrder.all.reverse_order
