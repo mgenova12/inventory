@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :authorize_admin
 
   def index 
-
+    @users = User.all
   end
 
   def create    
@@ -11,14 +11,25 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to '/users'
     else 
-      redirect_to '/user/new'
+      redirect_to '/users/new'
     end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+    
+  end
+
+  def destroy
+    user = User.find(params[:id])
+      
+    user.destroy
+    redirect_to '/users'
   end
 
 
   private
 
-  # Notice the name of the method
   def sign_up_params
     params.require(:user).permit(:email, :role, :password, :password_confirmation)
   end

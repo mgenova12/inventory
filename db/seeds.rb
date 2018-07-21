@@ -7,8 +7,8 @@
 # Order.destroy_all
 # Invent.destroy_all
 
-TrappeOrder.destroy_all
-TrappeInvent.destroy_all
+# TrappeOrder.destroy_all
+# TrappeInvent.destroy_all
   
 
 
