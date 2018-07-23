@@ -11,6 +11,7 @@
 # TrappeInvent.destroy_all
   
 
+CambridgeProduct.where(supplier:'US Foods').update_all(supplier: 'USFoods')
 
 # 20.times do 
 #   Order.create(status: 'saved')
