@@ -24,7 +24,7 @@
 		      <tr>
 		        <td><%= product.name %></td>
 		        <td><%= product.measurement %></td>
-		        <td><%= pf.number_field :amount, class:"form-control", required: "true", required: "true" %></td>
+		        <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
 		        <%= pf.hidden_field :product_id, :value => product.id %>
 		      </tr>
 	      <% end %>
@@ -41,7 +41,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -58,7 +58,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -75,7 +75,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -92,7 +92,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -109,7 +109,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -126,7 +126,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -143,7 +143,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -160,7 +160,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -177,7 +177,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -194,7 +194,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -211,7 +211,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -228,7 +228,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -245,7 +245,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -262,7 +262,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -279,7 +279,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -296,7 +296,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -313,7 +313,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -330,7 +330,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -347,7 +347,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -364,7 +364,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
@@ -381,7 +381,7 @@
           <tr>
             <td><%= product.name %></td>
             <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true" %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
           </tr>
         <% end %>
