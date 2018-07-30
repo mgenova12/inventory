@@ -1,6 +1,6 @@
 <%= render partial: 'shared/navbar' %>
 
-<h1>All your orders</h1>
+<h1>All Dover orders</h1>
 
 <div class="table-responsive">          
   <table class="table table-striped">
@@ -8,6 +8,7 @@
       <tr>
         <th>Order ID</th>
         <th>Date placed</th>
+        <th>Order Day </th>
         <th>View</th>
       </tr>
     </thead>
@@ -17,7 +18,8 @@
 	  <tr>
 	    <td><%= order.id %></td>
 	    <td><%= order.created_at.strftime('%A, %d %b %Y %l:%M %p') %></td>	
-	    <td><a href="/dover/inventory/<%= order.id %>">View </a> </td>	
+      <td> <%= order.order_day %> </td>
+	    <td><a href="/dover/inventory/<%= order.id %>/<%= order.order_day %>">View </a> </td>	
 	 </tr>
 	<% end %>
 

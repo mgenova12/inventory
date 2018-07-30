@@ -1,21 +1,16 @@
 <%= render partial: 'shared/navbar' %>
 
-<h1>All Orders</h1>
+<h1><%= params[:order_day] %>'s Order</h1>
 
-<a href="/dover/inventory/<%= @order_id %>">All </a>
-<a href="/dover/inventory/<%= @order_id %>/tuesday">Tuesday </a>
-<a href="/dover/inventory/<%= @order_id %>/thursday">Thursday </a>
 
 <div class="table-responsive">          
   <table class="table table-striped">
     <thead>
       <tr>
         <th>Product</th>
-        <th>Tuesday Max</th>
-        <th>Thursday Max</th>
+        <th>Max Amount</th>
         <th>Current Quantity</th>
-        <th>Tuesday Quantity Needed</th>
-        <th>Thursday Quantity Needed</th>
+        <th><%= params[:order_day] %> Quantity Needed</th>
       </tr>
     </thead>
     <tbody>
@@ -36,11 +31,9 @@
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen'%>
         <tr>
           <td><%= inventory.product.name %></td>
-          <td><%= inventory.product.tuesday_max %></td> 
-          <td><%= inventory.product.thursday_max %></td>  
+          <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory) %></td>
-          <td><%= thursday_quantity_needed(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -55,11 +48,9 @@
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated'%>
         <tr>
           <td><%= inventory.product.name %></td>
-          <td><%= inventory.product.tuesday_max %></td> 
-          <td><%= inventory.product.thursday_max %></td>  
+          <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory)  %></td>
-          <td><%= thursday_quantity_needed(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -74,11 +65,9 @@
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'dry'%>
         <tr>
           <td><%= inventory.product.name %></td>
-          <td><%= inventory.product.tuesday_max %></td> 
-          <td><%= inventory.product.thursday_max %></td>  
+          <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory)  %></td>
-          <td><%= thursday_quantity_needed(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -100,11 +89,9 @@
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen'%>
         <tr>
           <td><%= inventory.product.name %></td>
-          <td><%= inventory.product.tuesday_max %></td> 
-          <td><%= inventory.product.thursday_max %></td>  
+          <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory)  %></td>
-          <td><%= thursday_quantity_needed(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    
@@ -119,11 +106,9 @@
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated'%>
         <tr>
           <td><%= inventory.product.name %></td>
-          <td><%= inventory.product.tuesday_max %></td> 
-          <td><%= inventory.product.thursday_max %></td>  
+          <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory)  %></td>
-          <td><%= thursday_quantity_needed(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -138,11 +123,9 @@
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry'%>
         <tr>
           <td><%= inventory.product.name %></td>
-          <td><%= inventory.product.tuesday_max %></td> 
-          <td><%= inventory.product.thursday_max %></td>  
+          <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory)  %></td>
-          <td><%= thursday_quantity_needed(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    

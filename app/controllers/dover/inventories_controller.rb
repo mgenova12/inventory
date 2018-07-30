@@ -37,7 +37,8 @@ class Dover::InventoriesController < ApplicationController
     
     order = Order.create(
       status: 'saved',
-      message: params['message']
+      message: params['message'],
+      order_day: params[:order_day]
     )
 
     params[:product].values.each do |product|
@@ -47,30 +48,17 @@ class Dover::InventoriesController < ApplicationController
         order_id: order.id
       )
     end
-
-    redirect_to "/dover/inventory/#{order.id}"
+    redirect_to "/dover/inventory/#{order.id}/#{params[:order_day]}"
   end
 
-  def show
-    @order_id = params[:id]
-    @inventories = Invent.where(order_id: params[:id])
-    @order_message = Order.find(params[:id]).message
-  end
-
-  def tuesday
+  def order_day
     @order_id = params[:id]
     @inventories = Invent.where(order_id: params[:id])
     @order_message = Order.find(params[:id]).message
 
-    render 'tuesday.html.erb'
+    render 'show.html.erb'
   end
 
-  def thursday
-    @order_id = params[:id]
-    @inventories = Invent.where(order_id: params[:id])
-    @order_message = Order.find(params[:id]).message
 
-    render 'thursday.html.erb'
-  end
 
 end
