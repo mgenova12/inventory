@@ -3,14 +3,13 @@
 <h1><%= params[:order_day] %>'s Order</h1>
 
 
-<div class="table-responsive">          
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Product</th>
-        <th>Max Amount</th>
-        <th>Current Quantity</th>
-        <th><%= params[:order_day] %> Quantity Needed</th>
+        <th class="sticky">Product</th>
+        <th class="sticky">Max Amount</th>
+        <th class="sticky">Current Quantity</th>
+        <th class="sticky"><%= params[:order_day] %> Quantity Needed</th>
       </tr>
     </thead>
     <tbody>
@@ -142,4 +141,3 @@
 
   </div>
 
-</div>

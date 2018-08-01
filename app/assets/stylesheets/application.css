@@ -14,11 +14,15 @@
  *= require_self
  */
 
+@media print {
+  a[href]:after {
+    content: none !important;
+  }
+}
 
 thead td {
 	background-color: grey;
 }
-
 
 .navbar ul {
     list-style-type: none;
@@ -69,6 +73,15 @@ thead td {
 /* Change the link color to #111 (black) on hover */
 .supplier li a:hover {
     background-color: #111;
+}
+
+
+th.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #cae8ca;
 }
 
 
