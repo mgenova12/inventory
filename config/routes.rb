@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
   root :to => 'stores#index'
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     get '/inventory/new' => 'inventories#new'
     post '/inventory/new' => 'inventories#create'
     get '/inventory/:id/:order_day' => 'inventories#order_day'
+    get '/inventory/:id/:order_day/all' => 'inventories#order_day_all'
 
     get '/products' => 'products#index'
     get '/products/new' => 'products#new'

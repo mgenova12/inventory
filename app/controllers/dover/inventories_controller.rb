@@ -59,6 +59,14 @@ class Dover::InventoriesController < ApplicationController
     render 'show.html.erb'
   end
 
+  def order_day_all
+    @order_id = params[:id]
+    @inventories = Invent.where(order_id: params[:id])
+    @order_message = Order.find(params[:id]).message
+
+    render 'show_all.html.erb'
+  end
+
 
 
 end

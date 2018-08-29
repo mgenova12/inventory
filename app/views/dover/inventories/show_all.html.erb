@@ -33,7 +33,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen' && tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen' %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
@@ -50,7 +50,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated' && tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated' %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
@@ -67,7 +67,7 @@
     </thead>       
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == true && inventory.product.item_type == 'dry' && tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.product.prepped == true && inventory.product.item_type == 'dry' %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
@@ -91,7 +91,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen' && tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen' %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
@@ -108,7 +108,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated' && tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated' %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
@@ -125,7 +125,7 @@
     </thead>  
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry' && tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry' %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
