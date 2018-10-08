@@ -16,6 +16,7 @@
         <th class="sticky">Max Amount</th>
         <th class="sticky">Current Quantity</th>
         <th class="sticky"><%= params[:order_day] %> Quantity Needed</th>
+        <th class="sticky">Barcode</th>        
       </tr>
     </thead>
     <tbody>
@@ -39,6 +40,7 @@
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory) %></td>
+          <td> <%= wicked_pdf_image_tag_for_public( @data ) %> </td>
        </tr>
       <% end %>
     <% end %>
