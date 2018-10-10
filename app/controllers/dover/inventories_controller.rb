@@ -3,6 +3,10 @@ class Dover::InventoriesController < ApplicationController
   before_action :authenticate_user!
   before_filter :authorize_dover
   
+  require 'barby'
+  require 'barby/barcode/code_128'
+  
+
   def index
     @orders = Order.all.reverse_order
   end

@@ -30,9 +30,9 @@
 
 #products ids 144- 378
 
-Product.all.each do |product|
-  product.update(barcode: rand.to_s[2..13])
-end
+# Product.all.each do |product|
+#   product.update(barcode: rand.to_s[2..13])
+# end
 
 
 
