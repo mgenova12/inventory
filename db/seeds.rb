@@ -28,7 +28,9 @@
 
 #Product.where(deleted: true).destroy_all
 
- 
+   
+
+   
 # Product.all.each do |product|
 #   product.update(barcode: rand.to_s[2..13])
 # end
