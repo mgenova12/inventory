@@ -57,6 +57,14 @@ class Cambridge::InventoriesController < ApplicationController
     @order_message = CambridgeOrder.find(params[:id]).message
   end
 
+  def show_all
+    @order_id = params[:id]
+    @inventories = CambridgeInvent.where(order_id: params[:id])
+    @order_message = CambridgeOrder.find(params[:id]).message
+
+    render 'show_all.html.erb'
+  end
+
   def supplier
     @supplier = params[:supplier]
     @order_id = params[:id]

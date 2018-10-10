@@ -49,7 +49,7 @@
       </tr>
     </thead>    
     <% @inventories.each do |inventory| %>
-      <% if inventory.trappe_product.prepped == true &&  inventory.trappe_product.item_type == 'frozen' && trappe_tuesday_quantity_needed(inventory)[0] != "0"  %>
+      <% if inventory.trappe_product.prepped == true &&  inventory.trappe_product.item_type == 'frozen'%>
         <tr>
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
@@ -66,7 +66,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.trappe_product.prepped == true &&  inventory.trappe_product.item_type == 'refrigerated' && trappe_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.trappe_product.prepped == true &&  inventory.trappe_product.item_type == 'refrigerated'%>
         <tr>
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
@@ -83,7 +83,7 @@
     </thead>       
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.trappe_product.prepped == true &&  inventory.trappe_product.item_type == 'dry' && trappe_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.trappe_product.prepped == true &&  inventory.trappe_product.item_type == 'dry'%>
         <tr>
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
@@ -107,7 +107,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'frozen' && trappe_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'frozen'%>
         <tr>
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
@@ -124,7 +124,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'refrigerated' && trappe_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'refrigerated'%>
         <tr>
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
@@ -141,7 +141,7 @@
     </thead>  
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'dry' && trappe_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.trappe_product.prepped == false &&  inventory.trappe_product.item_type == 'dry'%>
         <tr>
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 

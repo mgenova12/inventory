@@ -16,7 +16,7 @@
 #   Order.create(status: 'saved')
 # end
 
-
+  
 # order_num = 0
 # Order.all.count.times do
 #   Product.all.each do |product|
@@ -27,8 +27,6 @@
 
 
 #Product.where(deleted: true).destroy_all
-
-   
 
    
 # Product.all.each do |product|

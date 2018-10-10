@@ -57,6 +57,14 @@ class Trappe::InventoriesController < ApplicationController
     @order_message = TrappeOrder.find(params[:id]).message
   end
 
+  def show_all
+    @order_id = params[:id]
+    @inventories = TrappeInvent.where(order_id: params[:id])
+    @order_message = TrappeOrder.find(params[:id]).message
+
+    render 'show_all.html.erb'
+  end
+
   def supplier
     @supplier = params[:supplier]
     @order_id = params[:id]

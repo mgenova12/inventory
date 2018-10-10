@@ -3,7 +3,6 @@ class Dover::InventoriesController < ApplicationController
   before_action :authenticate_user!
   before_filter :authorize_dover
 
-
   def index
     @orders = Order.all.reverse_order
   end
