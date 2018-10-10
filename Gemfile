@@ -32,6 +32,7 @@ gem 'faker'
 gem 'barby'
 gem 'wkhtmltopdf-heroku'
 gem 'chunky_png'
+gem 'wicked_pdf'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

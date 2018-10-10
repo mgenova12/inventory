@@ -3,9 +3,10 @@ class Dover::InventoriesController < ApplicationController
   before_action :authenticate_user!
   before_filter :authorize_dover
 
-  require 'barby'
-  require 'barby/barcode/code_128'
   require 'chunky_png'
+  require 'barby'
+  require 'barby/barcode/code_128'    
+  require 'barby/outputter/png_outputter'
 
   def index
     @orders = Order.all.reverse_order
