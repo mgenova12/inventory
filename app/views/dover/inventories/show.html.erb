@@ -35,12 +35,14 @@
 
     <% @inventories.each do |inventory| %>
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen' && tuesday_quantity_needed(inventory)[0] != "0" %>
+        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
+        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory) %></td>
-          <td> <%= wicked_pdf_image_tag_for_public( @data ) %> </td>
+          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
        </tr>
       <% end %>
     <% end %>
@@ -53,11 +55,14 @@
 
     <% @inventories.each do |inventory| %>
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated' && tuesday_quantity_needed(inventory)[0] != "0" %>
+        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
+        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
-          <td><%= tuesday_quantity_needed(inventory)  %></td>
+          <td><%= tuesday_quantity_needed(inventory) %></td>
+          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
        </tr>
       <% end %>
     <% end %>
@@ -70,11 +75,14 @@
 
     <% @inventories.each do |inventory| %>
       <% if inventory.product.prepped == true && inventory.product.item_type == 'dry' && tuesday_quantity_needed(inventory)[0] != "0" %>
+        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
+        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory) %></td>
+          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
        </tr>
       <% end %>
     <% end %>
@@ -94,11 +102,14 @@
 
     <% @inventories.each do |inventory| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen' && tuesday_quantity_needed(inventory)[0] != "0" %>
+        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
+        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
-          <td><%= tuesday_quantity_needed(inventory)  %></td>
+          <td><%= tuesday_quantity_needed(inventory) %></td>
+          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
        </tr>
       <% end %>
     <% end %>    
@@ -111,11 +122,14 @@
 
     <% @inventories.each do |inventory| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated' && tuesday_quantity_needed(inventory)[0] != "0" %>
+        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
+        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= tuesday_quantity_needed(inventory)  %></td>
+          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
        </tr>
       <% end %>
     <% end %>
@@ -128,11 +142,14 @@
 
     <% @inventories.each do |inventory| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry' && tuesday_quantity_needed(inventory)[0] != "0" %>
+        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
+        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
-          <td><%= tuesday_quantity_needed(inventory)  %></td>
+          <td><%= tuesday_quantity_needed(inventory) %></td>
+          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
        </tr>
       <% end %>
     <% end %>    

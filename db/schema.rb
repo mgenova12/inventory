@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180730142749) do
+ActiveRecord::Schema.define(version: 20181009232449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20180730142749) do
     t.string   "location"
     t.boolean  "deleted"
     t.integer  "case_quantity"
+    t.string   "barcode"
   end
 
   create_table "trappe_invents", force: :cascade do |t|

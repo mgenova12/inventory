@@ -55,10 +55,6 @@ class Dover::InventoriesController < ApplicationController
     @order_id = params[:id]
     @inventories = Invent.where(order_id: params[:id])
     @order_message = Order.find(params[:id]).message
-
-    @number = '12213124'
-    @barcode = Barby::Code128B.new(@number)
-    @data = @barcode.to_image(height: 30, margin: 5).to_data_url
    
     render 'show.html.erb'
   end
