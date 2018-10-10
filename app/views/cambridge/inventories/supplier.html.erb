@@ -46,7 +46,7 @@
       </tr>
     </thead>    
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == true && inventory.cambridge_product.item_type == 'frozen' && inventory.cambridge_product.supplier == @supplier %>
+      <% if inventory.cambridge_product.prepped == true && inventory.cambridge_product.item_type == 'frozen' && inventory.cambridge_product.supplier == @supplier && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
@@ -65,7 +65,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == true && inventory.cambridge_product.item_type == 'refrigerated' && inventory.cambridge_product.supplier == @supplier%>
+      <% if inventory.cambridge_product.prepped == true && inventory.cambridge_product.item_type == 'refrigerated' && inventory.cambridge_product.supplier == @supplier && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
@@ -84,7 +84,7 @@
     </thead>       
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == true && inventory.cambridge_product.item_type == 'dry' && inventory.cambridge_product.supplier == @supplier %>
+      <% if inventory.cambridge_product.prepped == true && inventory.cambridge_product.item_type == 'dry' && inventory.cambridge_product.supplier == @supplier && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
@@ -110,7 +110,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'frozen' && inventory.cambridge_product.supplier == @supplier %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'frozen' && inventory.cambridge_product.supplier == @supplier && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
@@ -129,7 +129,7 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'refrigerated' && inventory.cambridge_product.supplier == @supplier%>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'refrigerated' && inventory.cambridge_product.supplier == @supplier && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
@@ -148,7 +148,7 @@
     </thead>  
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'dry' &&inventory.cambridge_product.supplier == @supplier %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'dry' &&inventory.cambridge_product.supplier == @supplier && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
