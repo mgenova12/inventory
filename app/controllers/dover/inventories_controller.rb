@@ -5,6 +5,7 @@ class Dover::InventoriesController < ApplicationController
 
   require 'barby'
   require 'barby/barcode/code_128'
+  require 'chunky_png'
 
   def index
     @orders = Order.all.reverse_order
