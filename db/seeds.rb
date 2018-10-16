@@ -35,7 +35,8 @@
 
 Order.first(5).each do |order|
   Invent.where(order_id: order.id).destroy_all
+  order.destroy
 end
 
-Order.first(5).destroy_all
+
 
