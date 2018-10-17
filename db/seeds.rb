@@ -10,13 +10,7 @@
 # TrappeOrder.destroy_all
 # TrappeInvent.destroy_all
   
-# CambridgeProduct.where(supplier:'US Foods').update_all(supplier: 'USFoods')
 
-# 20.times do 
-#   Order.create(status: 'saved')
-# end
-
-  
 # order_num = 0
 # Order.all.count.times do
 #   Product.all.each do |product|
@@ -26,13 +20,15 @@
 # end
 
 
+#Deletes all deleted Products
 #Product.where(deleted: true).destroy_all
 
-Product.all.each do |product|
-  product.update(barcode: rand.to_s[2..13])
-end
+#Generates New barcodes
+# Product.all.each do |product|
+#   product.update(barcode: rand.to_s[2..13])
+# end
 
-
+#Destroys last 5 Orders
 # Order.first(5).each do |order|
 #   Invent.where(order_id: order.id).destroy_all
 #   order.destroy

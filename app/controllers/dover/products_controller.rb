@@ -20,7 +20,8 @@ class Dover::ProductsController < ApplicationController
       prepped: params[:prepped],
       item_type: params[:item_type],
       location: params[:location],
-      deleted: false
+      deleted: false,
+      barcode: rand.to_s[2..13]
     )
     if product.save
       render 'new'
@@ -43,7 +44,8 @@ class Dover::ProductsController < ApplicationController
       case_quantity: params[:case_quantity],
       prepped: params[:prepped],
       item_type: params[:item_type],
-      location: params[:location]
+      location: params[:location],
+      barcode: params[:barcode]
     )
 
     redirect_to '/dover/products'
