@@ -55,5 +55,22 @@
     delete '/products/:id' => 'products#destroy'    
   end
 
-  
+  namespace :bypass do 
+    get '/inventory' => 'inventories#index'
+    get '/inventory/new' => 'inventories#new'
+    post '/inventory/new' => 'inventories#create'
+    get '/inventory/:id' => 'inventories#show'
+    get '/inventory/:id/all' => 'inventories#show_all'
+
+    get '/inventory/:id/:supplier' => 'inventories#supplier'
+
+    get '/products' => 'products#index'
+    get '/products/new' => 'products#new'
+    post '/products' => 'products#create'
+    get '/products/:id/edit' => 'products#edit'
+    patch '/products/:id' => 'products#update'
+    delete '/products/:id' => 'products#destroy'    
+  end
+
+
 end

@@ -21,14 +21,16 @@
 
 
 #Deletes all deleted Products
-#Product.where(deleted: true).destroy_all
+Product.where(deleted: true).destroy_all
+CambridgeProduct.where(deleted: true).destroy_all
+TrappeProduct.where(deleted: true).destroy_all
 
-#Generates New barcodes
+#Generates All New barcodes
 # Product.all.each do |product|
 #   product.update(barcode: rand.to_s[2..13])
 # end
 
-#Destroys last 5 Orders
+#Destroys last 5 Orders Dover
 # Order.first(5).each do |order|
 #   Invent.where(order_id: order.id).destroy_all
 #   order.destroy

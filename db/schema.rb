@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181009232449) do
+ActiveRecord::Schema.define(version: 20181021205140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bypass_invents", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.integer  "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bypass_orders", force: :cascade do |t|
+    t.string   "status"
+    t.string   "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bypass_products", force: :cascade do |t|
+    t.string   "name"
+    t.string   "measurement"
+    t.integer  "tuesday_max"
+    t.integer  "thursday_max"
+    t.boolean  "prepped"
+    t.string   "item_type"
+    t.string   "supplier"
+    t.string   "amount"
+    t.integer  "case_quantity"
+    t.string   "location"
+    t.boolean  "deleted"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "cambridge_invents", force: :cascade do |t|
     t.integer  "amount"

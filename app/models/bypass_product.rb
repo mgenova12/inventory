@@ -1,0 +1,2 @@
+class BypassProduct < ApplicationRecord
+end

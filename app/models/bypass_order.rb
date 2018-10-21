@@ -1,0 +1,2 @@
+class BypassOrder < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+module Bypass::InventoriesHelper
+end

@@ -1,0 +1,2 @@
+class BypassInvent < ApplicationRecord
+end

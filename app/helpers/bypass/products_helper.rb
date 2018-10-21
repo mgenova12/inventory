@@ -1,0 +1,2 @@
+module Bypass::ProductsHelper
+end
