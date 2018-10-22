@@ -1,6 +1,28 @@
 <%= render partial: 'shared/bypassNav' %>
 
-<h1>All ByPass orders</h1>
+<h1>All Bypass orders</h1>
 
+<div class="table-responsive">          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Order ID</th>
+        <th>Date placed</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
 
+	<% @orders.each do |order| %>
+	  <tr>
+	    <td><%= order.id %></td>
+	    <td><%= order.created_at.strftime('%A, %d %b %Y %l:%M %p') %></td>	
+	    <td><a href="/bypass/inventory/<%= order.id %>">View </a> </td>	
+	 </tr>
+	<% end %>
+
+    </tbody>
+  </table>
+
+  </div>
 </div>

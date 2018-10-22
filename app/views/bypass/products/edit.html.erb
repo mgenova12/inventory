@@ -1,0 +1,101 @@
+<%= render partial: 'shared/bypassNav' %>
+
+
+<h1>Edit <%= @product.name %></h1>
+
+	<%= form_tag "/bypass/products/#{@product.id}", method: :patch do %>
+	<form>
+	  <div class="form-group">
+	    <label>Product Name</label>
+	    <input type="text" class="form-control" name="name" value='<%= @product.name %>'  required>
+	  </div>
+
+	  <div class="form-group">
+	    <label>Count By</label>
+	   <select class="form-control" name="measurement" required>
+	   		<%= count_by_options(@product) %>
+	    </select>	
+	  </div>
+
+	  <div class="form-group">
+	    <label>Case Quantity</label>
+	    <input type="number" class="form-control" name="case_quantity" value='<%= @product.case_quantity %>'  placeholder="Leave Blank If Not Case">
+	  </div>
+
+	  <div class="form-group">
+	    <label>Tuesday Max Amount</label>
+	    <input type="number" class="form-control" name="tuesday_max" value='<%= @product.tuesday_max %>'  required>
+	  </div>
+	  <div class="form-group">
+	    <label>Thursday Max Amount</label>
+	    <input type="number" class="form-control" name="thursday_max" value='<%= @product.thursday_max %>'  required>
+	  </div>	
+
+	  <div class="form-group">
+	    <label>Distributor</label>
+	   <select class="form-control" name="supplier" required>
+	      <option value=""></option>
+	      <option value="USFoods">US Foods</option>
+	      <option value="Sysco">Sysco</option>
+	      <option value="Gordon">Gordon</option>
+	      <option value="Espo">Espo</option>
+	      <option value="Holt">Holt</option>
+	      <option value="Jetro">Jetro</option>
+	      <option value="PrepCenter">Prep Center</option>
+	      <option value="Sams">Sams</option>
+	      <option value="Walmart">Walmart</option>
+	      <option value="Amazon">Amazon</option>
+	      <option value="Ecolab">Ecolab</option>
+	      <option value="Coke">Coke</option>	      
+	    </select>	
+	  </div>
+
+	  <div class="form-group">
+	    <label>Prepped</label>
+	    <select class="form-control" name="prepped" required>
+	    	<%= prepped_options(@product) %>
+	    </select>	  	
+	  </div>
+
+	  <div class="form-group">
+	    <label>Item Type</label>
+	    <select class="form-control" name="item_type" required>
+	    	<%= item_type_options(@product) %>
+	    </select>	 
+	  </div>	  
+
+	  <div class="form-group">
+	    <label>Location</label>
+	    <select class="form-control" name="location" required>
+	      <option value='<%= @product.location %>'><%= @product.location %></option>
+	      <option value="Walk-in Self 1">Walk-in Self 1</option>
+	      <option value="Walk-in Self 2">Walk-in Self 2</option>
+	      <option value="Walk-in Self 3">Walk-in Self 3</option>
+	      <option value="Walk-in Self 4">Walk-in Self 4</option>
+	      <option value="Walk-in Self 5">Walk-in Self 5</option>
+	      <option value="Walk-in Self 6">Walk-in Self 6</option>
+	      <option value="Walk-in Floor">Walk-in Floor</option>
+	      <option value="Right Freezer Door">Right Freezer Door</option>
+	      <option value="Left Freezer Door">Left Freezer Door</option>
+	      <option value="Chest Freezer">Chest Freezer</option>
+	      <option value="Shed location 1">Shed location 1</option>
+	      <option value="Shed location 2">Shed location 2</option>
+	      <option value="Shed location 3">Shed location 3</option>
+	      <option value="Shed location 4">Shed location 4</option>
+	      <option value="Shed location 5">Shed location 5</option>
+	      <option value="Shed location 6">Shed location 6</option>
+	      <option value="Top of Walk-in">Top of Walk-in</option>
+	      <option value="Back Table">Back Table</option>
+	      <option value="Back Shelf">Back Shelf</option>
+	      <option value="Front Top Shelf">Front Top Shelf</option>
+	      <option value="Front Counter">Front Counter</option>
+	      <option value="Office">Office</option>
+	    </select>	 
+	  </div>	
+
+	  <button type="submit" class="btn btn-primary">Edit Product</button>
+	</form>
+	<% end %>
+	<br>
+
+
