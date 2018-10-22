@@ -1,7 +1,7 @@
 class Bypass::InventoriesController < ApplicationController
   include BypassInventoriesHelper
   before_action :authenticate_user!
-  # before_filter :authorize_bypass
+  before_filter :authorize_bypass
 
   def index
     @orders = BypassOrder.all.reverse_order
@@ -56,6 +56,24 @@ class Bypass::InventoriesController < ApplicationController
     @inventories = BypassInvent.where(order_id: params[:id])
     @order_message = BypassOrder.find(params[:id]).message
   end
+
+  def show_all
+    @order_id = params[:id]
+    @inventories = BypassInvent.where(order_id: params[:id])
+    @order_message = BypassOrder.find(params[:id]).message
+
+    render 'show_all.html.erb'
+  end  
+
+  def supplier
+    @supplier = params[:supplier]
+    @order_id = params[:id]
+    @inventories = BypassInvent.where(order_id: params[:id])
+    @order_message = BypassOrder.find(params[:id]).message
+
+    render 'supplier.html.erb'
+  end
+
 
 
 

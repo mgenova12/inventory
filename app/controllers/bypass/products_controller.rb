@@ -1,4 +1,7 @@
 class Bypass::ProductsController < ApplicationController
+  include ProductsHelper
+  before_action :authenticate_user!
+  before_filter :authorize_admin
 
   def index 
     @products = BypassProduct.where(deleted: false).order(:name)

@@ -27,4 +27,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: 'Access Denied' unless current_user.cambridge? || current_user.admin?
   end
 
+  def authorize_bypass
+    redirect_to root_path, alert: 'Access Denied' unless current_user.bypass? || current_user.admin?
+  end
+
 end
