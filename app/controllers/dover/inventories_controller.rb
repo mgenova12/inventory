@@ -49,7 +49,7 @@ class Dover::InventoriesController < ApplicationController
     params[:product].values.each do |product|
       Invent.create(
         amount: product['amount'].to_i,
-        product_id: product["product_id"].to_i,
+        product_id: product["product_id"],
         order_id: order.id,
         quantity_needed: quantity_needed(product)
       )

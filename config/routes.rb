@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :trappe do
-    namespace :dover do
-      get 'sales/index'
-    end
-  end
-
   root :to => 'stores#index'
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}

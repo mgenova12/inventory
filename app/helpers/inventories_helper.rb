@@ -14,7 +14,6 @@ module InventoriesHelper
   #   end
   # end
 
-
   def quantity_needed(product)
     if product['case_quantity'].presence
       case_amount = product['tuesday_max'].to_i - product['amount'].to_i

@@ -25,7 +25,11 @@
 		        <td><%= product.name %></td>
 		        <td><%= product.measurement %></td>
 		        <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-		        <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+		        
 		      </tr>
 	      <% end %>
 	    <% end %>
@@ -43,6 +47,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>      
@@ -60,6 +68,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -77,6 +89,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -94,6 +110,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -111,6 +131,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>                    
@@ -128,6 +152,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -145,6 +173,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>        
@@ -162,6 +194,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -179,6 +215,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -196,6 +236,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -213,6 +257,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -230,6 +278,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -247,6 +299,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -264,6 +320,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -281,6 +341,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -298,6 +362,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -315,6 +383,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -332,6 +404,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -349,6 +425,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -366,6 +446,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>  
@@ -383,6 +467,10 @@
             <td><%= product.measurement %></td>
             <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
             <%= pf.hidden_field :product_id, :value => product.id %>
+            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
+            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => product.measurement %>
+            
           </tr>
         <% end %>
       <% end %>                          

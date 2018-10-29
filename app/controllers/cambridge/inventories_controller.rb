@@ -43,8 +43,9 @@ class Cambridge::InventoriesController < ApplicationController
     params[:product].values.each do |product|
       CambridgeInvent.create!(
         amount: product['amount'].to_i,
-        product_id: product["product_id"].to_i,
-        order_id: order.id
+        product_id: product["product_id"],
+        order_id: order.id,
+        quantity_needed: quantity_needed(product)
       )
     end
 

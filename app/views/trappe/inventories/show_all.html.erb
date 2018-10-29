@@ -54,7 +54,7 @@
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
           <td><%= trappe_add_percent(inventory) %></td>  
-          <td><%= trappe_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= t_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -71,7 +71,7 @@
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
           <td><%= trappe_add_percent(inventory) %></td>  
-          <td><%= trappe_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= t_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -88,7 +88,7 @@
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
           <td><%= trappe_add_percent(inventory) %></td>  
-          <td><%= trappe_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= t_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -112,7 +112,7 @@
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
           <td><%= trappe_add_percent(inventory) %></td>  
-          <td><%= trappe_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= t_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    
@@ -129,7 +129,7 @@
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
           <td><%= trappe_add_percent(inventory) %></td>  
-          <td><%= trappe_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= t_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -146,7 +146,7 @@
           <td><%= inventory.trappe_product.name %></td>
           <td><%= inventory.trappe_product.tuesday_max %></td> 
           <td><%= trappe_add_percent(inventory) %></td>  
-          <td><%= trappe_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= t_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    

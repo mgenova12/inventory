@@ -49,12 +49,12 @@
       </tr>
     </thead>    
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'frozen' && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
           <td><%= cambridge_add_percent(inventory) %></td>  
-          <td><%= cambridge_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= c_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -66,12 +66,12 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'refrigerated' && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
           <td><%= cambridge_add_percent(inventory) %></td>  
-          <td><%= cambridge_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= c_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -83,12 +83,12 @@
     </thead>       
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'dry' && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.cambridge_product.prepped == true &&  inventory.cambridge_product.item_type == 'dry' && inventory.quantity_needed != 0 %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
           <td><%= cambridge_add_percent(inventory) %></td>  
-          <td><%= cambridge_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= c_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -107,12 +107,12 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'frozen' && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
           <td><%= cambridge_add_percent(inventory) %></td>  
-          <td><%= cambridge_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= c_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    
@@ -124,12 +124,12 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'refrigerated' && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
           <td><%= cambridge_add_percent(inventory) %></td>  
-          <td><%= cambridge_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= c_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -141,12 +141,12 @@
     </thead>  
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'dry' && cambridge_tuesday_quantity_needed(inventory)[0] != "0" %>
+      <% if inventory.cambridge_product.prepped == false &&  inventory.cambridge_product.item_type == 'dry' && inventory.quantity_needed != 0 %>
         <tr>
           <td><%= inventory.cambridge_product.name %></td>
           <td><%= inventory.cambridge_product.tuesday_max %></td> 
           <td><%= cambridge_add_percent(inventory) %></td>  
-          <td><%= cambridge_tuesday_quantity_needed(inventory) %></td>
+          <td><%= inventory.quantity_needed %> <%= c_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    

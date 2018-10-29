@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181029164645) do
+ActiveRecord::Schema.define(version: 20181029183636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 20181029164645) do
     t.integer  "product_id"
     t.integer  "order_id"
     t.integer  "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "quantity_needed"
   end
 
   create_table "bypass_orders", force: :cascade do |t|
@@ -44,14 +45,16 @@ ActiveRecord::Schema.define(version: 20181029164645) do
     t.boolean  "deleted"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.decimal  "price"
   end
 
   create_table "cambridge_invents", force: :cascade do |t|
     t.integer  "amount"
     t.string   "product_id"
     t.string   "order_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "quantity_needed"
   end
 
   create_table "cambridge_orders", force: :cascade do |t|
@@ -75,6 +78,7 @@ ActiveRecord::Schema.define(version: 20181029164645) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "amount"
+    t.decimal  "price"
   end
 
   create_table "invents", force: :cascade do |t|
@@ -115,8 +119,9 @@ ActiveRecord::Schema.define(version: 20181029164645) do
     t.string   "product_id"
     t.string   "order_id"
     t.integer  "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "quantity_needed"
   end
 
   create_table "trappe_orders", force: :cascade do |t|
@@ -140,6 +145,7 @@ ActiveRecord::Schema.define(version: 20181029164645) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.string   "supplier"
+    t.decimal  "price"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,29 +1,24 @@
 module TrappeInventoriesHelper
 
-  def trappe_tuesday_quantity_needed(invent)
-    if invent.trappe_product.case_quantity
-      case_amount = invent.trappe_product.tuesday_max.to_i - invent.amount
-      case_result = (case_amount.to_f / invent.trappe_product.case_quantity.to_f).ceil
-      case_result > 0 ? "#{case_result} CASE" : "#{0} CASE"
-    elsif invent.trappe_product.measurement == '%'
-      percent = (invent.amount * 0.01)
-      percent <= 0.25 ? "#{1} CASE" : "#{0} CASE"
-    else 
-      result = (invent.trappe_product.tuesday_max.to_i - invent.amount)
-      result > 0 ? "#{result} #{invent.trappe_product.measurement}" : "#{0} #{invent.trappe_product.measurement}"
+  def quantity_needed(product)
+    if product['case_quantity'].presence
+      case_amount = product['tuesday_max'].to_i - product['amount'].to_i
+      case_result = (case_amount.to_f / product['case_quantity'].to_f).ceil
+      case_result > 0 ? case_result : 0
+    elsif product['measurement'] == '%'
+      percent = (product['amount'].to_i * 0.01)
+      percent <= 0.25 ? 1 : 0
+    else
+      result = (product['tuesday_max'].to_i - product['amount'].to_i)
+      result > 0 ? result : 0
     end
   end
 
-  def trappe_thursday_quantity_needed(invent)
-    if invent.trappe_product.case_quantity
-      case_amount = invent.trappe_product.thursday_max.to_i - invent.amount
-      case_result = (case_amount.to_f / invent.trappe_product.case_quantity.to_f).ceil
-      case_result > 0 ? "#{case_result} CASE" : "#{0} CASE"
-    elsif invent.trappe_product.measurement == '%'
-      "#{0} CASE"
+  def t_add_measurement_label(invent)
+    if invent.trappe_product.case_quantity || invent.trappe_product.measurement == '%'
+      'CASE'
     else 
-      result = (invent.trappe_product.thursday_max.to_i - invent.amount)
-      result > 0 ? "#{result} #{invent.trappe_product.measurement}" : "#{0} #{invent.trappe_product.measurement}"
+      invent.trappe_product.measurement
     end
   end
 

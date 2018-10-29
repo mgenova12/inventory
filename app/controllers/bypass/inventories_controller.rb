@@ -44,7 +44,8 @@ class Bypass::InventoriesController < ApplicationController
       BypassInvent.create!(
         amount: product['amount'].to_i,
         product_id: product["product_id"].to_i,
-        order_id: order.id
+        order_id: order.id,
+        quantity_needed: quantity_needed(product)
       )
     end
 
