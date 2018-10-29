@@ -1,0 +1,2 @@
+module Trappe::StoresHelper
+end

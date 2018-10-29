@@ -3,14 +3,7 @@
 #
 # Examples:
 #
-
-# Order.destroy_all
-# Invent.destroy_all
-
-# TrappeOrder.destroy_all
-# TrappeInvent.destroy_all
   
-
 # order_num = 0
 # Order.all.count.times do
 #   Product.all.each do |product|
@@ -36,5 +29,8 @@ TrappeProduct.where(deleted: true).destroy_all
 #   order.destroy
 # end
 
-
+#Generates Random Prices
+# Product.all.each do |product|
+#   product.update(price: rand(11.2...76.9).round(2))
+# end
 

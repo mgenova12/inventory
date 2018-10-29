@@ -2,12 +2,12 @@
 
 <h1><%= params[:order_day] %>'s Order</h1>
 
-<div class='supplier'>
+<!-- <div class='supplier'>
   <ul> 
     <li><a href="/dover/inventory/<%= params[:id] %>/<%= params[:order_day] %>/all"> All Quanities </a></li>
     <li><a href="/dover/inventory/<%= params[:id] %>/<%= params[:order_day] %>"> No Zeros </a></li>
   </ul>
-</div>
+</div> -->
 
   <table class="table table-striped">
     <thead>
@@ -16,7 +16,8 @@
         <th class="sticky">Max Amount</th>
         <th class="sticky">Current Quantity</th>
         <th class="sticky"><%= params[:order_day] %> Quantity Needed</th>
-        <th class="sticky">Barcode</th>        
+        <th class="sticky">Price</th>
+        <th class="sticky">Total Price </th>
       </tr>
     </thead>
     <tbody>
@@ -35,14 +36,13 @@
 
     <% @inventories.each do |inventory| %>
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
-        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
-        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
+          <td>$<%= inventory.product.price %> </td>
+          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>
        </tr>
       <% end %>
     <% end %>
@@ -54,15 +54,14 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
-        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
-        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
+      <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
+          <td>$<%= inventory.product.price %> </td>
+          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>      
        </tr>
       <% end %>
     <% end %>
@@ -74,15 +73,14 @@
     </thead>       
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == true && inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>
-        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
-        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
+      <% if inventory.product.prepped == true && inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
+          <td>$<%= inventory.product.price %> </td>
+          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>        
        </tr>
       <% end %>
     <% end %>
@@ -101,15 +99,14 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
-        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
-        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
+      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
+          <td>$<%= inventory.product.price %> </td>
+          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>         
        </tr>
       <% end %>
     <% end %>    
@@ -121,15 +118,14 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
-        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
-        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
+      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
+          <td>$<%= inventory.product.price %> </td>
+          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>         
        </tr>
       <% end %>
     <% end %>
@@ -141,15 +137,14 @@
     </thead>  
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>
-        <% barcode = Barby::Code128B.new(inventory.product.barcode) %>
-        <% data = barcode.to_image(height: 30, margin: 5).to_data_url %>      
+      <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>      
         <tr>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td><%= wicked_pdf_image_tag_for_public( data ) %> </td>
+          <td>$<%= inventory.product.price %> </td>
+          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>          
        </tr>
       <% end %>
     <% end %>    

@@ -1,4 +1,10 @@
-  Rails.application.routes.draw do
+Rails.application.routes.draw do
+  namespace :trappe do
+    namespace :dover do
+      get 'sales/index'
+    end
+  end
+
   root :to => 'stores#index'
 
   devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
@@ -22,6 +28,8 @@
   end
 
   namespace :trappe do 
+    get '/stores' => 'stores#index'
+
     get '/inventory' => 'inventories#index'
     get '/inventory/new' => 'inventories#new'
     post '/inventory/new' => 'inventories#create'
@@ -35,7 +43,14 @@
     post '/products' => 'products#create'
     get '/products/:id/edit' => 'products#edit'
     patch '/products/:id' => 'products#update'
-    delete '/products/:id' => 'products#destroy'    
+    delete '/products/:id' => 'products#destroy'
+
+
+    namespace :dover do 
+      get '/sales' => 'sales#index'
+      get '/sales/:id/:order_day' => 'sales#order_day'
+    end
+
   end
 
   namespace :cambridge do 
