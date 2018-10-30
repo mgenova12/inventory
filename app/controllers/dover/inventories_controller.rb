@@ -42,6 +42,7 @@ class Dover::InventoriesController < ApplicationController
     
     order = Order.create(
       status: 'saved',
+      sale_status: 'Pending',
       message: params['message'],
       order_day: params[:order_day]
     )

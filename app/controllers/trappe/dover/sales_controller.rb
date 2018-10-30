@@ -37,4 +37,21 @@ class Trappe::Dover::SalesController < ApplicationController
 
   end
 
+  def create 
+    Order.find_by(id: params[:order_id]).update(
+      sale_status: 'Complete'
+    )
+
+    redirect_to "/trappe/dover/sales/#{params[:order_id]}/#{params[:order_day]}"
+  end
+
+  def show
+    @order_id = params[:id]
+    @inventories = Invent.where(order_id: params[:id])
+    @order_message = Order.find(params[:id]).message
+
+    @final_total = Invent.where(order_id: params[:id], out_of_stock: false).sum(:product_total)   
+  end
+
+
 end

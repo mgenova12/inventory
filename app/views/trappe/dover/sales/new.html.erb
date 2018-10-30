@@ -1,6 +1,6 @@
-<%= render partial: 'shared/navbar' %>
+<%= render partial: 'shared/trappeNav' %>
 
-<h1><%= params[:order_day] %>'s Order</h1>
+<h1>Review <%= params[:order_day] %>'s Sales Order</h1>
 
 <!-- <div class='supplier'>
   <ul> 
@@ -23,8 +23,9 @@
     </thead>
     <tbody>
 
-  <%= form_tag "/trappe/dover/sales/stock/new", method: :post do %>
-
+  <%= form_tag "/trappe/dover/sales/stock/review/new", method: :post do %>
+    <%= hidden_field_tag 'order_id', params[:id] %>
+    <%= hidden_field_tag 'order_day', params[:order_day] %>
     <thead>
       <tr> 
         <td align="center" colspan="7">Prepped </td>
@@ -207,7 +208,7 @@
     <h2>$<%= @final_total %></h2>
   </div>
 
-      <%= submit_tag 'Submit', class:"btn btn-primary" %>
+      <%= submit_tag 'Place Order', class:"btn btn-primary" %>
    <% end %>
 
   <br>

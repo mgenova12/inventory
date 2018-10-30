@@ -37,6 +37,7 @@ class Bypass::InventoriesController < ApplicationController
     
     order = BypassOrder.create(
       status: 'saved',
+      sale_status: 'Pending',
       message: params['message']
     )
 
