@@ -42,7 +42,10 @@ Rails.application.routes.draw do
 
     namespace :dover do 
       get '/sales' => 'sales#index'
-      get '/sales/:id/:order_day' => 'sales#order_day'
+      
+      get '/sales/:id/:order_day/stock/new' => 'sales#stock'
+      post '/sales/stock/new' => 'sales#create_stock'
+
     end
 
   end

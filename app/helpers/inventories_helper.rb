@@ -1,19 +1,5 @@
 module InventoriesHelper
 
-  # def tuesday_quantity_needed(invent)
-  #   if invent.product.case_quantity
-  #     case_amount = invent.product.tuesday_max - invent.amount
-  #     case_result = (case_amount.to_f / invent.product.case_quantity.to_f).ceil
-  #     case_result > 0 ? "#{case_result} CASE" : "#{0} CASE"
-  #   elsif invent.product.measurement == '%'
-  #     percent = (invent.amount * 0.01)
-  #     percent <= 0.25 ? "#{1} CASE" : "#{0} CASE"
-  #   else 
-  #     result = (invent.product.tuesday_max - invent.amount)
-  #     result > 0 ? "#{result} #{invent.product.measurement}" : "#{0} #{invent.product.measurement}"
-  #   end
-  # end
-
   def quantity_needed(product)
     if product['case_quantity'].presence
       case_amount = product['tuesday_max'].to_i - product['amount'].to_i

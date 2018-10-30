@@ -9,7 +9,6 @@
         <th>Order ID</th>
         <th>Date placed</th>
         <th>Order Day </th>
-        <th>View</th>
         <th>Place a Sale</th>
       </tr>
     </thead>
@@ -20,8 +19,7 @@
 	    <td><%= order.id %></td>
 	    <td><%= order.created_at.strftime('%A, %d %b %Y %l:%M %p') %></td>	
       <td> <%= order.order_day %> </td>
-	    <td><a href="/dover/inventory/<%= order.id %>/<%= order.order_day %>">View </a> </td>	
-      <td><a href="/trappe/dover/sales/<%= order.id %>/<%= order.order_day %>">View Sales Order </a>
+      <td><a href="/trappe/dover/sales/<%= order.id %>/<%= order.order_day %>/stock/new">View Sales Order </a>
 	 </tr>
 	<% end %>
 

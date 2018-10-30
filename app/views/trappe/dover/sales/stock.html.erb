@@ -12,6 +12,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
+        <th class="sticky">Out of Stock</th>
         <th class="sticky">Product</th>
         <th class="sticky">Max Amount</th>
         <th class="sticky">Current Quantity</th>
@@ -22,136 +23,175 @@
     </thead>
     <tbody>
 
+  <%= form_tag "/trappe/dover/sales/stock/new", method: :post do %>
+
     <thead>
       <tr> 
-        <td align="center" colspan="6">Prepped </td>
+        <td align="center" colspan="7">Prepped </td>
       </tr>
     </thead>
 
     <thead>
       <tr> 
-        <td align="center" colspan="6">Frozen </td>
+        <td align="center" colspan="7">Frozen </td>
       </tr>
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
-        <tr>
-          <td><%= inventory.product.name %></td>
-          <td><%= inventory.product.tuesday_max %></td>   
-          <td><%= add_percent(inventory) %></td>  
-          <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>
-       </tr>
+      <%= fields_for "inventory[]", inventory do |pf| %>
+
+        <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
+          <tr>
+            <td><%= pf.check_box("out_of_stock") %></td>
+            <%= pf.hidden_field :invent_id, :value => inventory.id %>
+            <td><%= inventory.product.name %></td>
+            <td><%= inventory.product.tuesday_max %></td>   
+            <td><%= add_percent(inventory) %></td>  
+            <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
+            <td>$<%= inventory.product.price %> </td>
+            <td>$<%= inventory.product_total %> </td>
+         </tr>
+         <% end %>
+
       <% end %>
     <% end %>
 
     <thead>
       <tr> 
-        <td align="center" colspan="6">Refrigerated </td>
+        <td align="center" colspan="7">Refrigerated </td>
       </tr>
     </thead>    
 
     <% @inventories.each do |inventory| %>
+    <%= fields_for "inventory[]", inventory do |pf| %>
+
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>      
         <tr>
+          <td><%= pf.check_box("out_of_stock") %></td>
+          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
           <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>      
+          <td>$<%= inventory.product_total %> </td>      
        </tr>
+      <% end %>
       <% end %>
     <% end %>
 
     <thead>
       <tr> 
-        <td align="center" colspan="6">Dry </td>
+        <td align="center" colspan="7">Dry </td>
       </tr>
     </thead>       
 
     <% @inventories.each do |inventory| %>
+    <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == true && inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>      
         <tr>
+          <td><%= pf.check_box("out_of_stock") %></td>
+          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
           <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>        
+          <td>$<%= inventory.product_total %> </td>        
        </tr>
+      <% end %>
       <% end %>
     <% end %>
 
 
     <thead>
       <tr> 
-        <td align="center" colspan="6">Not Prepped </td>
+        <td align="center" colspan="7">Not Prepped </td>
       </tr>
     </thead>
 
     <thead>
       <tr> 
-        <td align="center" colspan="6">Frozen </td>
+        <td align="center" colspan="7">Frozen </td>
       </tr>
     </thead>    
 
     <% @inventories.each do |inventory| %>
+    <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>      
         <tr>
+          <td><%= pf.check_box("out_of_stock") %></td>
+          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
           <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>         
+          <td>$<%= inventory.product_total %> </td>         
        </tr>
+      <% end %>
       <% end %>
     <% end %>    
 
     <thead>
       <tr> 
-        <td align="center" colspan="6">Refrigerated </td>
+        <td align="center" colspan="7">Refrigerated </td>
       </tr>
     </thead>    
 
     <% @inventories.each do |inventory| %>
+    <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>      
         <tr>
+          <td><%= pf.check_box("out_of_stock") %></td>
+          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
           <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>         
+          <td>$<%= inventory.product_total %> </td>         
        </tr>
+      <% end %>
       <% end %>
     <% end %>
 
     <thead>
       <tr> 
-        <td align="center" colspan="6">Dry </td>
+        <td align="center" colspan="7">Dry </td>
       </tr>
     </thead>  
 
     <% @inventories.each do |inventory| %>
+    <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>      
         <tr>
+          <td><%= pf.check_box("out_of_stock") %></td>
+          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
           <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.quantity_needed * inventory.product.price %> </td>          
+          <td>$<%= inventory.product_total %> </td>          
        </tr>
+      <% end %>
       <% end %>
     <% end %>    
 
-
     </tbody>
   </table>
+
+
+  <div align="right"> 
+    <h3> TOTAL: </h3>
+    <h2>$<%= @final_total %></h2>
+  </div>
+
+      <%= submit_tag 'Submit', class:"btn btn-primary" %>
+   <% end %>
+
+  <br>
     Notes:
     <br>
       <%= @order_message %>

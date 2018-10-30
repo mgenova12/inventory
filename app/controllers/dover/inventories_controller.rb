@@ -47,11 +47,13 @@ class Dover::InventoriesController < ApplicationController
     )
 
     params[:product].values.each do |product|
+      total = (product['price'].to_f * quantity_needed(product))
       Invent.create(
         amount: product['amount'].to_i,
         product_id: product["product_id"],
         order_id: order.id,
-        quantity_needed: quantity_needed(product)
+        quantity_needed: quantity_needed(product),
+        product_total: total
       )
     end
 

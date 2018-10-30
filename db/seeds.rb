@@ -18,6 +18,16 @@ Product.where(deleted: true).destroy_all
 CambridgeProduct.where(deleted: true).destroy_all
 TrappeProduct.where(deleted: true).destroy_all
 
+Order.all.destroy_all
+TrappeOrder.all.destroy_all
+CambridgeOrder.all.destroy_all
+BypassOrder.all.destroy_all
+
+Invent.all.destroy_all
+TrappeInvent.all.destroy_all
+CambridgeInvent.all.destroy_all
+BypassInvent.all.destroy_all
+
 #Generates All New barcodes
 # Product.all.each do |product|
 #   product.update(barcode: rand.to_s[2..13])
