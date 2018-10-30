@@ -46,6 +46,8 @@ Rails.application.routes.draw do
       get '/sales/:id/:order_day/stock/new' => 'sales#stock'
       post '/sales/stock/new' => 'sales#create_stock'
 
+      get '/sales/:id/:order_day/stock/review/new' => 'sales#new'
+
     end
 
   end

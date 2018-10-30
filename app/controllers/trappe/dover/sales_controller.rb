@@ -18,15 +18,22 @@ class Trappe::Dover::SalesController < ApplicationController
     @products = Product.all
 
     params[:inventory].values.each do |invent|
-      # p '*******'
-      # p invent['invent_id']
       Invent.find_by(id: invent['invent_id']).update(
         out_of_stock: invent['out_of_stock']
       )
     end
 
-    redirect_to "/bypass/inventory/#{order.id}"
+    redirect_to "/trappe/dover/sales/#{params[:order_id]}/#{params[:order_day]}/stock/review/new"
+  end
 
+  def new 
+    @order_id = params[:id]
+    @inventories = Invent.where(order_id: params[:id])
+    @order_message = Order.find(params[:id]).message
+
+    @final_total = Invent.where(order_id: params[:id], out_of_stock: false).sum(:product_total)
+   
+    render 'new.html.erb'
 
   end
 

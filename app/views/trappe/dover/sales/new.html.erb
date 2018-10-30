@@ -24,8 +24,7 @@
     <tbody>
 
   <%= form_tag "/trappe/dover/sales/stock/new", method: :post do %>
-    <%= hidden_field_tag 'order_id', params[:id] %>
-    <%= hidden_field_tag 'order_day', params[:order_day] %>
+
     <thead>
       <tr> 
         <td align="center" colspan="7">Prepped </td>
@@ -43,8 +42,12 @@
 
         <% if inventory.product.prepped == true &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
           <tr>
-            <td><%= pf.check_box("out_of_stock") %></td>
-            <%= pf.hidden_field :invent_id, :value => inventory.id %>
+          	<% if inventory.out_of_stock %>
+            	<td style="color:red;">OUT OF STOCK</td>
+           	<% else %>
+           		<td> </td>
+           	<% end %>
+
             <td><%= inventory.product.name %></td>
             <td><%= inventory.product.tuesday_max %></td>   
             <td><%= add_percent(inventory) %></td>  
@@ -68,8 +71,11 @@
 
       <% if inventory.product.prepped == true &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>      
         <tr>
-          <td><%= pf.check_box("out_of_stock") %></td>
-          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
+          	<% if inventory.out_of_stock %>
+            	<td style="color:red;">OUT OF STOCK</td>
+           	<% else %>
+           		<td> </td>
+           	<% end %>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
@@ -91,8 +97,11 @@
     <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == true && inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>      
         <tr>
-          <td><%= pf.check_box("out_of_stock") %></td>
-          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
+          	<% if inventory.out_of_stock %>
+            	<td style="color:red;">OUT OF STOCK</td>
+           	<% else %>
+           		<td> </td>
+           	<% end %>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
@@ -121,8 +130,11 @@
     <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>      
         <tr>
-          <td><%= pf.check_box("out_of_stock") %></td>
-          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
+          	<% if inventory.out_of_stock %>
+            	<td style="color:red;">OUT OF STOCK</td>
+           	<% else %>
+           		<td> </td>
+           	<% end %>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
@@ -144,8 +156,11 @@
     <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>      
         <tr>
-          <td><%= pf.check_box("out_of_stock") %></td>
-          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
+          	<% if inventory.out_of_stock %>
+            	<td style="color:red;">OUT OF STOCK</td>
+           	<% else %>
+           		<td> </td>
+           	<% end %>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
@@ -167,8 +182,11 @@
     <%= fields_for "inventory[]", inventory do |pf| %>
       <% if inventory.product.prepped == false &&  inventory.product.item_type == 'dry' && inventory.quantity_needed != 0 %>      
         <tr>
-          <td><%= pf.check_box("out_of_stock") %></td>
-          <%= pf.hidden_field :invent_id, :value => inventory.id %>                    
+          	<% if inventory.out_of_stock %>
+            	<td style="color:red;">OUT OF STOCK</td>
+           	<% else %>
+           		<td> </td>
+           	<% end %>
           <td><%= inventory.product.name %></td>
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
