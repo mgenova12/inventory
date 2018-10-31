@@ -25,6 +25,7 @@
 	    <label>Tuesday Max Amount</label>
 	    <input type="number" class="form-control" name="tuesday_max" value='<%= @product.tuesday_max %>'  required>
 	  </div>
+
 	  <div class="form-group">
 	    <label>Thursday Max Amount</label>
 	    <input type="number" class="form-control" name="thursday_max" value='<%= @product.thursday_max %>'  required>
@@ -33,19 +34,7 @@
 	  <div class="form-group">
 	    <label>Distributor</label>
 	   <select class="form-control" name="supplier" required>
-	      <option value=""></option>
-	      <option value="USFoods">US Foods</option>
-	      <option value="Sysco">Sysco</option>
-	      <option value="Gordon">Gordon</option>
-	      <option value="Espo">Espo</option>
-	      <option value="Holt">Holt</option>
-	      <option value="Jetro">Jetro</option>
-	      <option value="PrepCenter">Prep Center</option>
-	      <option value="Sams">Sams</option>
-	      <option value="Walmart">Walmart</option>
-	      <option value="Amazon">Amazon</option>
-	      <option value="Ecolab">Ecolab</option>
-	      <option value="Coke">Coke</option>
+	   		<%= distributor_options(@product) %>
 	    </select>	
 	  </div>
 
@@ -91,6 +80,11 @@
 	      <option value="Office">Office</option>
 	    </select>	 
 	  </div>	
+
+	  <div class='form-group'>
+	  	<label>Price</label>
+		<input type="number" class="form-control" id="amount" maxlength="12" name="price" step="any" value='<%= @product.price %>' required/>
+	  </div>
 
 	  <button type="submit" class="btn btn-primary">Edit Product</button>
 	</form>

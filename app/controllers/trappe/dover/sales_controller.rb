@@ -1,4 +1,6 @@
 class Trappe::Dover::SalesController < ApplicationController
+  before_action :authenticate_user!
+  before_filter :authorize_admin  
   
   def index
     @orders = Order.all.reverse_order

@@ -32,8 +32,12 @@
      }
   });
 
-   
-
+  $('#amount').on('blur', function() {
+      var amount = $('#amount').val().replace(/^\s+|\s+$/g, '');
+      if( ($('#amount').val() != '') && (!amount.match(/^$/) )){
+          $('#amount').val( parseFloat(amount).toFixed(2));
+      }
+  }); 
 
   </script>
 

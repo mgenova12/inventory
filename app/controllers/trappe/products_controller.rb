@@ -21,7 +21,8 @@ class Trappe::ProductsController < ApplicationController
       prepped: params[:prepped],
       item_type: params[:item_type],
       location: params[:location],
-      deleted: false
+      deleted: false,
+      price: params[:price]
     )
     if product.save
       render 'new'
@@ -45,7 +46,8 @@ class Trappe::ProductsController < ApplicationController
       case_quantity: params[:case_quantity],
       prepped: params[:prepped],
       item_type: params[:item_type],
-      location: params[:location]
+      location: params[:location],
+      price: params[:price]
     )
 
     redirect_to '/trappe/products'
