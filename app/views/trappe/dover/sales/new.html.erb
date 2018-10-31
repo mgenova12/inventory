@@ -17,7 +17,7 @@
         <th class="sticky">Max Amount</th>
         <th class="sticky">Current Quantity</th>
         <th class="sticky"><%= params[:order_day] %> Quantity Needed</th>
-        <th class="sticky">Price</th>
+        <th class="sticky">Unit Price</th>
         <th class="sticky">Total Price </th>
       </tr>
     </thead>
@@ -208,7 +208,7 @@
     <h2>$<%= @final_total %></h2>
   </div>
 
-      <%= submit_tag 'Place Order', class:"btn btn-primary" %>
+      <%= submit_tag 'Place Order', class:"btn btn-primary pull-right" %>
    <% end %>
 
   <br>
