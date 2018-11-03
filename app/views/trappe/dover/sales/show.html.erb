@@ -45,13 +45,12 @@
            	<% else %>
            		<td> </td>
            	<% end %>
-
             <td><%= inventory.product.name %></td>
             <td><%= inventory.product.tuesday_max %></td>   
             <td><%= add_percent(inventory) %></td>  
             <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-            <td>$<%= inventory.product.price %> </td>
-            <td>$<%= inventory.product_total %> </td>
+            <td><%= number_to_currency(inventory.product.price) %> </td>
+            <td><%= number_to_currency(inventory.product_total) %> </td>
          </tr>
          <% end %>
 
@@ -78,8 +77,8 @@
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.product_total %> </td>      
+          <td><%= number_to_currency(inventory.product.price) %> </td>
+          <td><%= number_to_currency(inventory.product_total) %> </td>     
        </tr>
       <% end %>
       <% end %>
@@ -104,8 +103,8 @@
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.product_total %> </td>        
+          <td><%= number_to_currency(inventory.product.price) %> </td>
+          <td><%= number_to_currency(inventory.product_total) %> </td>        
        </tr>
       <% end %>
       <% end %>
@@ -137,8 +136,8 @@
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.product_total %> </td>         
+          <td><%= number_to_currency(inventory.product.price) %> </td>
+          <td><%= number_to_currency(inventory.product_total) %> </td>        
        </tr>
       <% end %>
       <% end %>
@@ -163,8 +162,8 @@
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.product_total %> </td>         
+          <td><%= number_to_currency(inventory.product.price) %> </td>
+          <td><%= number_to_currency(inventory.product_total) %> </td>         
        </tr>
       <% end %>
       <% end %>
@@ -189,8 +188,8 @@
           <td><%= inventory.product.tuesday_max %></td>   
           <td><%= add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= add_measurement_label(inventory) %></td>
-          <td>$<%= inventory.product.price %> </td>
-          <td>$<%= inventory.product_total %> </td>          
+          <td><%= number_to_currency(inventory.product.price) %> </td>
+          <td><%= number_to_currency(inventory.product_total) %> </td>          
        </tr>
       <% end %>
       <% end %>
@@ -202,7 +201,7 @@
 
   <div align="right"> 
     <h3> TOTAL: </h3>
-    <h2>$<%= @final_total %></h2>
+    <h2><%= number_to_currency(@final_total) %></h2>
   </div>
 
 
