@@ -22,6 +22,7 @@
         <th>Count By</th>
         <th>Case Quantity </th>
         <th>Item Type</th>
+        <th>Prepped</th>
         <th>Add Product</th>
       </tr>
     </thead>
@@ -35,6 +36,7 @@
           <td><%= product.measurement %></td> 
           <td><%= product.case_quantity %> </td>  
           <td><%= product.item_type %> </td>
+          <td><%= product.prepped %> </td>
           <td><%= link_to 'Add Product', "/bypass/products/#{product.id}/new", class: "btn btn-primary"%></td>
        </tr>
     <% end %>

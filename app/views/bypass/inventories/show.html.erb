@@ -49,10 +49,10 @@
       </tr>
     </thead>    
     <% @inventories.each do |inventory| %>
-      <% if inventory.bypass_product.prepped == true &&  inventory.bypass_product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
+      <% if inventory.bypass_product.product.prepped == true && inventory.bypass_product.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
         <tr>
-          <td><%= inventory.bypass_product.name %></td>
-          <td><%= inventory.bypass_product.tuesday_max %></td> 
+          <td><%= inventory.bypass_product.product.name %></td>
+          <td><%= inventory.bypass_product.max_amount %></td> 
           <td><%= bypass_add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %></td>
        </tr>
@@ -66,12 +66,12 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.bypass_product.prepped == true &&  inventory.bypass_product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
+      <% if inventory.bypass_product.product.prepped == true && inventory.bypass_product.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
         <tr>
-          <td><%= inventory.bypass_product.name %></td>
-          <td><%= inventory.bypass_product.tuesday_max %></td> 
+          <td><%= inventory.bypass_product.product.name %></td>
+          <td><%= inventory.bypass_product.max_amount %></td> 
           <td><%= bypass_add_percent(inventory) %></td>  
-          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %> </td>
+          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -83,12 +83,12 @@
     </thead>       
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.bypass_product.prepped == true &&  inventory.bypass_product.item_type == 'dry' && inventory.quantity_needed != 0 %>
+      <% if inventory.bypass_product.product.prepped == true && inventory.bypass_product.product.item_type == 'dry' && inventory.quantity_needed != 0 %>
         <tr>
-          <td><%= inventory.bypass_product.name %></td>
-          <td><%= inventory.bypass_product.tuesday_max %></td> 
+          <td><%= inventory.bypass_product.product.name %></td>
+          <td><%= inventory.bypass_product.max_amount %></td> 
           <td><%= bypass_add_percent(inventory) %></td>  
-          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %> </td>
+          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>
@@ -107,12 +107,12 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.bypass_product.prepped == false &&  inventory.bypass_product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
+      <% if inventory.bypass_product.product.prepped == false && inventory.bypass_product.product.item_type == 'frozen' && inventory.quantity_needed != 0 %>
         <tr>
-          <td><%= inventory.bypass_product.name %></td>
-          <td><%= inventory.bypass_product.tuesday_max %></td> 
+          <td><%= inventory.bypass_product.product.name %></td>
+          <td><%= inventory.bypass_product.max_amount %></td> 
           <td><%= bypass_add_percent(inventory) %></td>  
-          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %> </td>
+          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    
@@ -124,10 +124,10 @@
     </thead>    
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.bypass_product.prepped == false &&  inventory.bypass_product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
+      <% if inventory.bypass_product.product.prepped == false && inventory.bypass_product.product.item_type == 'refrigerated' && inventory.quantity_needed != 0 %>
         <tr>
-          <td><%= inventory.bypass_product.name %></td>
-          <td><%= inventory.bypass_product.tuesday_max %></td> 
+          <td><%= inventory.bypass_product.product.name %></td>
+          <td><%= inventory.bypass_product.max_amount %></td> 
           <td><%= bypass_add_percent(inventory) %></td>  
           <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %></td>
        </tr>
@@ -141,12 +141,12 @@
     </thead>  
 
     <% @inventories.each do |inventory| %>
-      <% if inventory.bypass_product.prepped == false &&  inventory.bypass_product.item_type == 'dry' && inventory.quantity_needed != 0 %>
+      <% if inventory.bypass_product.product.prepped == false && inventory.bypass_product.product.item_type == 'dry' && inventory.quantity_needed != 0 %>
         <tr>
-          <td><%= inventory.bypass_product.name %></td>
-          <td><%= inventory.bypass_product.tuesday_max %></td> 
+          <td><%= inventory.bypass_product.product.name %></td>
+          <td><%= inventory.bypass_product.max_amount %></td> 
           <td><%= bypass_add_percent(inventory) %></td>  
-          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %> </td>
+          <td><%= inventory.quantity_needed %> <%= b_add_measurement_label(inventory) %></td>
        </tr>
       <% end %>
     <% end %>    

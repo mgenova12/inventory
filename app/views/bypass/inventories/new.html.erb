@@ -19,17 +19,17 @@
         </tr>
       </thead>
 
-      <% @walkin_shelf1.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @walkin_shelf1.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
 		      <tr>
-		        <td><%= product.name %></td>
-		        <td><%= product.measurement %></td>
-		        <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-		        
+		        <td><%= bypass_product.product.name %></td>
+		        <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>   
 		      </tr>
 	      <% end %>
 	    <% end %>
@@ -40,17 +40,17 @@
         </tr>
       </thead>
 
-      <% @walkin_shelf2.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @walkin_shelf2.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>      
@@ -61,17 +61,17 @@
         </tr>
       </thead>
 
-      <% @walkin_shelf3.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @walkin_shelf3.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -82,17 +82,17 @@
         </tr>
       </thead>
 
-      <% @walkin_shelf4.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @walkin_shelf4.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -103,17 +103,17 @@
         </tr>
       </thead>
 
-      <% @walkin_shelf5.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @walkin_shelf5.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -124,17 +124,17 @@
         </tr>
       </thead>
 
-      <% @walkin_shelf6.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @walkin_shelf6.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>                    
@@ -145,17 +145,17 @@
         </tr>
       </thead>
 
-      <% @walkin_floor.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @walkin_floor.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -166,17 +166,17 @@
         </tr>
       </thead>
 
-      <% @top_walkin.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @top_walkin.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>        
@@ -187,17 +187,17 @@
         </tr>
       </thead>
 
-      <% @right_freezer_door.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @right_freezer_door.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -208,17 +208,17 @@
         </tr>
       </thead>
 
-      <% @left_freezer_door.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @left_freezer_door.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -229,17 +229,17 @@
         </tr>
       </thead>
 
-      <% @chest_freezer.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @chest_freezer.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -250,17 +250,17 @@
         </tr>
       </thead>
 
-      <% @shed_location1.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @shed_location1.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -271,17 +271,17 @@
         </tr>
       </thead>
 
-      <% @shed_location2.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @shed_location2.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -292,17 +292,17 @@
         </tr>
       </thead>
 
-      <% @shed_location3.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @shed_location3.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -313,17 +313,17 @@
         </tr>
       </thead>
 
-      <% @shed_location4.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @shed_location4.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -334,17 +334,17 @@
         </tr>
       </thead>
 
-      <% @shed_location5.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @shed_location5.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -355,17 +355,17 @@
         </tr>
       </thead>
 
-      <% @shed_location6.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @shed_location6.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -376,17 +376,17 @@
         </tr>
       </thead>
 
-      <% @back_table.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @back_table.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -397,17 +397,17 @@
         </tr>
       </thead>
 
-      <% @back_shelf.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @back_shelf.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -418,17 +418,17 @@
         </tr>
       </thead>
 
-      <% @front_top_counter.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @front_top_counter.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -439,17 +439,17 @@
         </tr>
       </thead>
 
-      <% @front_counter.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @front_counter.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>  
@@ -460,17 +460,17 @@
         </tr>
       </thead>
 
-      <% @office.each do |product| %>
-        <%= fields_for "product[]", product do |pf| %>
+      <% @office.each do |bypass_product| %>
+        <%= fields_for "product[]", bypass_product do |pf| %>
           <tr>
-            <td><%= product.name %></td>
-            <td><%= product.measurement %></td>
-            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => product.case_quantity ? "#{product.case_quantity} in each case. Count by Item!" : nil %> </td>
-            <%= pf.hidden_field :product_id, :value => product.id %>
-            <%= pf.hidden_field :tuesday_max, :value => product.tuesday_max %>
-            <%= pf.hidden_field :case_quantity, :value => product.case_quantity %>
-            <%= pf.hidden_field :measurement, :value => product.measurement %>
-            
+            <td><%= bypass_product.product.name %></td>
+            <td><%= bypass_product.product.measurement %></td>
+            <td><%= pf.number_field :amount, class:"form-control", required: "true", :placeholder => bypass_product.product.case_quantity ? "#{bypass_product.product.case_quantity} in each case. Count by Item!" : nil %> </td>
+
+            <%= pf.hidden_field :bypass_product_id, :value => bypass_product.id %>
+            <%= pf.hidden_field :max_amount, :value => bypass_product.max_amount %>
+            <%= pf.hidden_field :case_quantity, :value => bypass_product.product.case_quantity %>
+            <%= pf.hidden_field :measurement, :value => bypass_product.product.measurement %>               
           </tr>
         <% end %>
       <% end %>                          
