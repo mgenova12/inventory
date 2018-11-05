@@ -7,7 +7,7 @@
     <li><a href="/">Choose Store</a></li>
     <% if current_user.admin? %>
         <li><a href="/bypass/products">View all products</a></li>
-        <li><a href="/bypass/products/new">Add New Product</a></li>
+        <li><a href="/bypass/products/search/new">Add New Product</a></li>
         <li><a href="/users/new">Create User</a></li>
     <% end %>
     <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>   

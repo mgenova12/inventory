@@ -1,61 +1,17 @@
 <%= render partial: 'shared/bypassNav' %>
+	<h1> <%= @bypass_products.product.name %> </h1>
 
-
-<h1>Edit <%= @product.name %></h1>
-
-	<%= form_tag "/bypass/products/#{@product.id}", method: :patch do %>
+	<%= form_tag "/bypass/products/#{params[:id]}", method: :patch do %>
 	<form>
 	  <div class="form-group">
-	    <label>Product Name</label>
-	    <input type="text" class="form-control" name="name" value='<%= @product.name %>'  required>
-	  </div>
-
-	  <div class="form-group">
-	    <label>Count By</label>
-	   <select class="form-control" name="measurement" required>
-	   		<%= count_by_options(@product) %>
-	    </select>	
-	  </div>
-
-	  <div class="form-group">
-	    <label>Case Quantity</label>
-	    <input type="number" class="form-control" name="case_quantity" value='<%= @product.case_quantity %>'  placeholder="Leave Blank If Not Case">
-	  </div>
-
-	  <div class="form-group">
-	    <label>Tuesday Max Amount</label>
-	    <input type="number" class="form-control" name="tuesday_max" value='<%= @product.tuesday_max %>'  required>
-	  </div>
-	  <div class="form-group">
-	    <label>Thursday Max Amount</label>
-	    <input type="number" class="form-control" name="thursday_max" value='<%= @product.thursday_max %>'  required>
-	  </div>	
-
-	  <div class="form-group">
-	    <label>Distributor</label>
-	   <select class="form-control" name="supplier" required>
-			<%= distributor_options(@product) %>      
-	    </select>	
-	  </div>
-
-	  <div class="form-group">
-	    <label>Prepped</label>
-	    <select class="form-control" name="prepped" required>
-	    	<%= prepped_options(@product) %>
-	    </select>	  	
-	  </div>
-
-	  <div class="form-group">
-	    <label>Item Type</label>
-	    <select class="form-control" name="item_type" required>
-	    	<%= item_type_options(@product) %>
-	    </select>	 
-	  </div>	  
+	    <label>Max Amount</label>
+	    <input type="number" class="form-control" name="max_amount" value='<%= @bypass_products.max_amount %>' required>
+	  </div>  
 
 	  <div class="form-group">
 	    <label>Location</label>
 	    <select class="form-control" name="location" required>
-	      <option value='<%= @product.location %>'><%= @product.location %></option>
+		  <option value='<%= @bypass_products.location %>'><%= @bypass_products.location %></option>
 	      <option value="Walk-in Self 1">Walk-in Self 1</option>
 	      <option value="Walk-in Self 2">Walk-in Self 2</option>
 	      <option value="Walk-in Self 3">Walk-in Self 3</option>
@@ -79,11 +35,6 @@
 	      <option value="Front Counter">Front Counter</option>
 	      <option value="Office">Office</option>
 	    </select>	 
-	  </div>	
-
-	  <div class='form-group'>
-	  	<label>Price</label>
-		<input type="number" class="form-control" id="amount" maxlength="12" name="price" step="any" value='<%= @product.price %>' required/>
 	  </div>	  
 
 	  <button type="submit" class="btn btn-primary">Edit Product</button>

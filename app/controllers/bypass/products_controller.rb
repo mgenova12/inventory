@@ -4,61 +4,65 @@ class Bypass::ProductsController < ApplicationController
   before_filter :authorize_admin
 
   def index 
-    @products = BypassProduct.where(deleted: false).order(:name)
+    @bypass_products = BypassProduct.order(:id)
   end
 
-  def new
+  def search
+    @products = Product.order(:name)
+
+    render 'search.html.erb'
+  end
+
+  def create_search
+    # p '###########'
+    # p params[:id_or_name]
+
+    # if params[:id_or_name].to_i != 0 
+    #   redirect_to "/bypass/products/#{params[:id_or_name]}/new"
+    # elsif params[:id_or_name].to_i == 0 
+    #   @id = Product.find_by(name: params[:id_or_name]).id
+    #   redirect_to "/bypass/products/#{@id}/new"
+    # else 
+    #   redirect_to "/bypass/products/search/new"
+    # end
 
   end
 
-  def create
-    product = BypassProduct.new(
-      name: params[:name],
-      measurement: params[:measurement],
-      tuesday_max: params[:tuesday_max],
-      thursday_max: params[:thursday_max],
-      supplier: params[:supplier],
-      case_quantity: params[:case_quantity],
-      prepped: params[:prepped],
-      item_type: params[:item_type],
+  def new 
+    @product = Product.find(params[:id])
+
+    render 'new.html.erb'
+  end
+
+  def create 
+    BypassProduct.create!(
+      max_amount: params[:max_amount],
       location: params[:location],
-      deleted: false,
-      price: params[:price]
+      product_id: params[:id]
     )
-    if product.save
-      render 'new'
-    end
+
+    redirect_to '/bypass/products/search/new'
   end
 
   def edit
-    @product = BypassProduct.find(params[:id])
+    @bypass_products = BypassProduct.find(params[:id])
   end
 
   def update
-    @product = BypassProduct.find(params[:id])
+    @bypass_products = BypassProduct.find(params[:id])
 
-    @product.update(
-      name: params[:name],
-      measurement: params[:measurement],
-      tuesday_max: params[:tuesday_max],
-      thursday_max: params[:thursday_max],
-      supplier: params[:supplier],
-      case_quantity: params[:case_quantity],
-      prepped: params[:prepped],
-      item_type: params[:item_type],
-      location: params[:location],
-      price: params[:price]
+    @bypass_products.update(
+      max_amount: params[:max_amount],
+      location: params[:location]
     )
 
     redirect_to '/bypass/products'
   end
 
   def destroy
-    @product = BypassProduct.find(params[:id])
+    @bypass_products = BypassProduct.find(params[:id])
 
-    @product.update(
-      deleted: true
-    )
+    @bypass_products.destroy
 
     redirect_to '/bypass/products'
   end

@@ -1,5 +1,7 @@
 <%= render partial: 'shared/bypassNav' %>
 
+<h1>All Bypass Products</h1>
+
 <div class="table-responsive">          
   <table class="table table-striped">
     <thead>
@@ -8,26 +10,26 @@
         <th>Count By</th>
         <th>Max Amount</th>
         <th>Case Quantity </th>
-        <th>Prepped</th>
         <th>Item Type</th>
         <th>Location</th>
         <th>Edit</th>
+
+
         <th>Delete</th>
       </tr>
     </thead>
     <tbody>
 
-	<% @products.each do |product| %>
+	<% @bypass_products.each do |bypass_product| %>
 	  <tr>
-	    <td><%= product.name %></td>
-      <td><%= product.measurement %></td> 
-	    <td><%= product.tuesday_max %></td>	
-      <td><%= product.case_quantity %> </td>	
-      <td><%= product.prepped %> </td>
-      <td><%= product.item_type %> </td>
-      <td><%= product.location %> </td>
-	    <td><%= link_to 'Edit', "/bypass/products/#{product.id}/edit", class: "btn btn-primary"%></td>
-	    <td><%= button_to "Delete", { action: "destroy", id: product.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %> </td>
+	    <td><%= bypass_product.product.name %></td>
+      <td><%= bypass_product.product.measurement %></td> 
+      <td><%= bypass_product.max_amount %> </td>
+      <td><%= bypass_product.product.case_quantity %> </td> 
+      <td><%= bypass_product.product.item_type %> </td>
+      <td><%= bypass_product.location %> </td>
+      <td><%= link_to 'Edit', "/bypass/products/#{bypass_product.id}/edit", class: "btn btn-primary"%></td>
+      <td><%= button_to "Delete", { action: "destroy", id: bypass_product.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %> </td>
 	 </tr>
 	<% end %>
 

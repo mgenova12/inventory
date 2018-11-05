@@ -82,8 +82,12 @@ Rails.application.routes.draw do
     get '/inventory/:id/:supplier' => 'inventories#supplier'
 
     get '/products' => 'products#index'
-    get '/products/new' => 'products#new'
-    post '/products' => 'products#create'
+
+    get '/products/search/new' => 'products#search'
+    # post '/products/search' => 'products#create_search'
+
+    get '/products/:id/new' => 'products#new'
+    post '/products' => 'products#create'    
     get '/products/:id/edit' => 'products#edit'
     patch '/products/:id' => 'products#update'
     delete '/products/:id' => 'products#destroy'    

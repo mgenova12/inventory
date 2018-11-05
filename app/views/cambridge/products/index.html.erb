@@ -6,10 +6,9 @@
       <tr>
         <th>Name</th>
         <th>Count By</th>
-        <th>Tuesday Max</th>
-        <th>Thursday Max</th>
+        <th>Max</th>
         <th>Case Quantity </th>
-        <th>Prepped</th>
+        <th>Distributor</th>
         <th>Item Type</th>
         <th>Location</th>
         <th>Edit</th>
@@ -23,9 +22,8 @@
 	    <td><%= product.name %></td>
       <td><%= product.measurement %></td> 
 	    <td><%= product.tuesday_max %></td>	
-	    <td><%= product.thursday_max %></td>
       <td><%= product.case_quantity %> </td>	
-      <td><%= product.prepped %> </td>
+      <td><%= product.supplier %> </td>
       <td><%= product.item_type %> </td>
       <td><%= product.location %> </td>
 	    <td><%= link_to 'Edit', "/cambridge/products/#{product.id}/edit", class: "btn btn-primary"%></td>

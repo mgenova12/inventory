@@ -1,0 +1,50 @@
+<%= render partial: 'shared/bypassNav' %>
+
+<h1>Add a New Product To Bypass</h1>
+
+  <!-- <%= form_tag "/bypass/products/search", method: :post do %> -->
+<!--   <form>
+
+    <div class="form-group">
+      <label>Search By Product Name or Product ID</label>
+      <input type="text" class="form-control" name="id_or_name" placeholder="Search..." required>
+    </div>  
+
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form> -->
+  <!-- <% end %> -->
+
+<div class="table-responsive">          
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Count By</th>
+        <th>Case Quantity </th>
+        <th>Item Type</th>
+        <th>Add Product</th>
+      </tr>
+    </thead>
+    <tbody>
+
+
+  <% @products.each do |product| %>
+    <% if product.bypass_products.empty?  %>
+        <tr>
+          <td><%= product.name %></td>
+          <td><%= product.measurement %></td> 
+          <td><%= product.case_quantity %> </td>  
+          <td><%= product.item_type %> </td>
+          <td><%= link_to 'Add Product', "/bypass/products/#{product.id}/new", class: "btn btn-primary"%></td>
+       </tr>
+    <% end %>
+  <% end %>
+
+    </tbody>
+  </table>
+
+
+
+
+
+
